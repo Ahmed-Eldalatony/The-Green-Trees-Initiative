@@ -1,0 +1,56 @@
+<section class="hero-section">
+  <img class="cover-img" src="/public/images/Eating boy.png" alt="" />
+  <div class="container">
+    <div class="content-container flex">
+      <div class="card card--wide card--hero">
+        <div class="mark inria-16">the issue</div>
+        <h1 class="header-primary playfair-44">
+          Climate change poses the biggest threat to women in developing
+          nations.
+        </h1>
+        <p>
+          <a class="inria-16" href="#"
+            >Read more about this environmental and social cause.</a
+          >
+        </p>
+      </div>
+      <p class="tag flod-72">#stop climate change</p>
+    </div>
+  </div>
+</section>
+<style>
+  .hero-section {
+    position: relative;
+  }
+
+  .hero-section .card {
+    height: 41.6rem;
+  }
+
+  .content-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  /* Responsive */
+
+  @media (max-width: 1300px) {
+    .content-container {
+      gap: 5rem;
+    }
+  }
+  @media (max-width: 768px) {
+    .content-container {
+      flex-direction: column;
+      gap: 9.6rem;
+    }
+    .hero-section .mark {
+      left: 6.4rem;
+      transform: translate(0);
+    }
+
+    .content-container .tag {
+      order: -1;
+    }
+  }
+</style>

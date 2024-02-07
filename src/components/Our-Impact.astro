@@ -1,0 +1,105 @@
+---
+import { Image } from "astro:assets";
+---
+
+<section class="our-impact">
+  <div class="container">
+    <Image
+      width="1000"
+      height="1000"
+      class="bg-cover"
+      src="/images/Impact Background.jpeg"
+      alt=""
+    />
+    <div class="our-impact__content">
+      <div class="mark mark--inverted mark--static inria-16">our impact</div>
+      <h1 class="header-primary playfair-44">
+        We invest in a better tomorrow for the planet and all its people.
+      </h1>
+      <div class="grid-4">
+        <div class="">
+          <p class="stats playfair-28">
+            <span class="stats__score flod-72">50</span>
+            million trees
+          </p>
+        </div>
+
+        <div class="">
+          <p class="stats playfair-28">
+            <span class="stats__score flod-72">200</span>
+            women employed in communities
+          </p>
+        </div>
+        <div class="">
+          <p class="stats playfair-28">
+            <span class="stats__score flod-72">25,000</span>
+            volunteers have been mobilized
+          </p>
+        </div>
+        <div class="">
+          <p class="stats playfair-28">
+            <span class="stats__score flod-72">150</span>
+            different chapters internationally
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+  .bg-cover {
+    height: 100%;
+    object-fit: cover;
+  }
+  .grid-4 {
+    gap: 7rem;
+    padding-inline: 16rem;
+  }
+  .header-primary {
+    width: 30ch;
+    text-align: center;
+    margin-bottom: 6rem;
+  }
+  .mark {
+    margin-bottom: 4.2rem;
+  }
+  .our-impact__content * {
+    color: white;
+  }
+  .our-impact__content {
+    width: 100%;
+    position: absolute;
+    top: 14rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .stats {
+    text-align: center;
+    width: 16ch;
+  }
+  .stats__score {
+    margin-bottom: 2rem;
+    display: block;
+  }
+  .container {
+    padding: 0;
+  }
+  @media (max-width: 1300px) {
+    .our-impact .container {
+      border: 2px solid red;
+    }
+    .grid-4 {
+      gap: 4rem;
+    }
+    .bg-cover {
+      min-height: 65rem;
+    }
+  }
+
+  @media (max-width: 1300px) {
+    .bg-cover {
+      min-height: 80rem;
+    }
+  }
+</style>

@@ -1,0 +1,144 @@
+---
+import { Image } from "astro:assets";
+---
+
+<section class="stories container">
+  <div class="cards-container carousel">
+    <div class="img-cont">
+      <div class="mark inria-16">stories</div>
+      <Image
+        width="640"
+        height="568"
+        src="/images/old man.png"
+        alt="an old man"
+      />
+    </div>
+    <div class="right">
+      <div class="card--inverted">
+        <q class="text-md"
+          >I am a person who was helped by this organization. Before they gave
+          me assistance, I was really struggling with this issue, but now my
+          life is better.
+        </q>
+        <p class="inria-16">BALKI, FARMER AND MOTHER IN NIGER</p>
+      </div>
+      <div class="btn btn--wide">Read more</div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .stories .btn {
+    transform: translateY(5rem);
+  }
+  .cards-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .right {
+    order: -1;
+    transform: translate(5rem);
+    width: max-content;
+    z-index: 100;
+  }
+
+  .right .text-md {
+    color: white;
+  }
+
+  .card--inverted p {
+    color: white;
+  }
+
+  .cards-container img {
+    width: 65rem;
+    object-fit: cover;
+  }
+
+  .img-cont {
+    position: relative;
+  }
+
+  @media (max-width: 1100px) {
+    .cards-container {
+      margin-left: -5rem;
+    }
+    .stories .card--inverted .text-md {
+      font-size: var(--fz-300);
+    }
+
+    .stories .right {
+      /* transform: translate(5rem, 2rem); */
+    }
+
+    .stories .right .card--inverted {
+      width: 40rem;
+    }
+
+    .stories img {
+      height: 35rem;
+      width: 40rem;
+    }
+  }
+  @media (max-width: 768px) {
+    .stories .cards-container {
+      flex-direction: column;
+      padding-right: 6.4rem;
+    }
+    .right {
+      transform: translate(6.4rem, -6.4rem);
+      text-align: start;
+    }
+
+    .stories .cards-container .right {
+      order: 0;
+      width: 100%;
+    }
+    .stories .card__p {
+      width: 26rem;
+    }
+
+    .stories .btn {
+      margin-top: 0rem;
+      margin-bottom: 6rem;
+      margin-inline: auto;
+    }
+
+    .stories .img-cont img {
+      width: 100%;
+      height: auto;
+    }
+    .stories .img-cont .mark {
+      left: 50% !important;
+      transform: translateX(-50%);
+    }
+    .cards-container {
+      margin-left: 0rem;
+    }
+    .cards-container {
+      text-align: start;
+    }
+    .right .card--inverted {
+      width: 100% !important ;
+      margin-inline: auto;
+    }
+  }
+  @media (max-width: 576px) {
+    .stories .card--inverted {
+      padding: 2rem;
+    }
+
+    .stories .btn {
+      margin-bottom: 8rem;
+    }
+    .right {
+      transform: translate(0);
+      text-align: center;
+      margin-top: -0.5rem;
+    }
+    .stories .cards-container {
+      padding-right: 0rem;
+    }
+  }
+</style>

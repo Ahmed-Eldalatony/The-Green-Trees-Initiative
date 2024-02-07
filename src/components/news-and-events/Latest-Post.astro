@@ -1,0 +1,80 @@
+---
+import { Image } from "astro:assets";
+import facebook from "../../../public/images/icons/facebook.svg?raw";
+import twitter from "../../../public/images/icons/twitter.svg?raw";
+import { Icon } from "astro-icon/components";
+---
+
+<section class="bg-blue">
+  <div class="container">
+    <div class="flex-between">
+      <h1 class="playfair-44">Latest Post</h1>
+      <ul class="social-container">
+        <span class="inria-16">FOLLOW US</span>
+        <li class="social">
+          <Icon name="entypo-social:facebook-with-circle" />
+        </li>
+        <li class="social">
+          <Icon name="entypo-social:youtube-with-circle" />
+        </li>
+        <li class="social">
+          <Icon name="entypo-social:instagram-with-circle" />
+        </li>
+        <li class="social">
+          <Icon name="entypo-social:linkedin-with-circle" />
+        </li>
+        <li class="social">
+          <Icon name="entypo-social:twitter-with-circle" />
+        </li>
+      </ul>
+    </div>
+    <div class="flex-between">
+      <div class="card card--wide bg-green">
+        <h2 class="playfair-36">
+          This is the title for the latest blog post this long
+        </h2>
+        <p class="inria-20 mt-40">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis
+          scelerisque lectus. Aliquam ullamcorper feugiat urna ut bibendum.
+          Nulla eu erat sed ipsum. Lorem ipsum dolor.
+        </p>
+        <span class="inria-16 mt-40">Continue reading this post</span>
+      </div>
+      <Image
+        width={"544"}
+        height={"400"}
+        class="img-card"
+        src="/public/images/babies.jpg"
+        alt=""
+      />
+    </div>
+  </div>
+
+  <style>
+    .img-card{
+      background-size: contain;
+      min-height: 43rem;
+    }
+    .social-container {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+    .social [data-icon] {
+      width: 4rem;
+      height: 4rem;
+    }
+    .flex-between {
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    .social-container{
+      margin-bottom: 7rem;
+    }
+    .grid-2{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  </style>
+</section>

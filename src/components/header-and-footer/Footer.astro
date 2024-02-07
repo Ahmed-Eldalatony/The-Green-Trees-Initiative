@@ -1,0 +1,87 @@
+<footer class="footer container grid-5">
+  <div class="logo playfair-22">
+    <a href="/">The Green Trees Initiative</a>
+  </div>
+  <div class="col">
+    <h3 class="header-footer inria-16">Developer Info</h3>
+    <ul>
+      <li class="inria-16">
+        Developed by <a
+          class="contact"
+          href="https://www.linkedin.com/in/ahmed-dalton-47a871234/"
+          >Ahmed Dalton
+        </a>
+      </li>
+      <li class="inria-16">
+        <a class="" href="https://github.com/Ahmed-Eldalatony"> Github</a>
+      </li>
+    </ul>
+  </div>
+  <div class="col">
+    <h3 class="header-footer inria-16">Contact Us</h3>
+    <ul>
+      <li class="inria-16">123 Anywhere St.</li>
+      <li class="inria-16">Cityname, NY 11206 (123)</li>
+      <li class="inria-16">456-7890 contact@npo.org</li>
+    </ul>
+  </div>
+
+  <div class="col">
+    <h3 class="header-footer inria-16">Links</h3>
+    <ul>
+      <li class="inria-16">
+        <a href="https://www.facebook.com/profile.php?id=100012754085479"
+          >Facebook</a
+        >
+      </li>
+      <li class="inria-16">
+        <a href="https://twitter.com/Ahmad_Dalton">Twitter</a>
+      </li>
+      <li class="inria-16">
+        <a href="https://dalton.pages.dev/">Personal Portfolio</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="col">
+    <p class="tag tag-reverse flod-44">#stop climate change</p>
+  </div>
+</footer>
+<style>
+  * {
+    color: var(--blue);
+  }
+  .col ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header-footer {
+    text-decoration: underline;
+    text-underline-offset: 8px;
+    margin-bottom: 1rem;
+  }
+
+  .footer .contact {
+    font-weight: bold;
+  }
+  .header-footer {
+    text-decoration: underline;
+    text-underline-offset: 8px;
+    margin-bottom: 1rem;
+  }
+
+  .footer .contact {
+    font-weight: bold;
+  }
+
+  @media (max-width: 768px) {
+    .grid-5 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .logo {
+      grid-row: span 5;
+      grid-column: span 2;
+    }
+  }
+</style>

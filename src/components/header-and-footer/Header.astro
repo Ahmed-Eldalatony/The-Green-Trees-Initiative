@@ -1,0 +1,95 @@
+<header>
+  <div class="main-header flex container container__p">
+    <div class="logo playfair-22">
+      <a href="/">The Green Trees Initiative</a>
+    </div>
+    <nav>
+      <ul class="flex">
+        <li><a class="inria-16" href="/about-us">About us</a></li>
+        <li><a class="inria-16" href="/our-stories">Our stories</a></li>
+        <li><a class="inria-16" href="/news-and-events">News and events</a></li>
+      </ul>
+    </nav>
+    <button class="btn"><a href="#donate-today">Donate Today</a></button>
+  </div>
+</header>
+<style>
+  .main-header {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 12.8rem;
+    /* padding: 2.4rem 4.6rem; */
+  }
+
+  .main-header a:hover {
+    opacity: 0.85;
+  }
+
+  .main-header nav ul {
+    gap: 8rem;
+  }
+  @media (max-width: 1100px) {
+    .main-header {
+      padding-inline: 6.2rem;
+    }
+    .main-header nav ul {
+      gap: 3rem;
+    }
+  }
+  @media (max-width: 768px) {
+    .main-header nav ul {
+      gap: 3rem;
+      margin-top: 2rem;
+    }
+    .main-header {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    nav {
+      order: 1;
+      grid-column: span 3;
+    }
+
+    nav ul {
+      gap: 2.6rem;
+    }
+
+    .main-header .btn {
+      position: absolute;
+      top: 50%;
+      right: 4.2rem;
+      transform: translateY(-50%);
+    }
+  }
+  @media (max-width: 576px) {
+    .main-header {
+      padding-inline: 1rem;
+    }
+    .main-header nav {
+      order: 2 !important;
+      grid-column: span 1;
+      margin-top: 0;
+      padding-left: 4rem;
+    }
+
+    nav ul {
+      flex-direction: column;
+      gap: 1.1rem;
+      width: 8rem;
+    }
+    .main-header nav a {
+      font-size: var(--fz-100);
+    }
+    .main-header .btn {
+      position: static;
+      margin-top: 3.6rem;
+      order: 3;
+      grid-column: span 3;
+      width: 90%;
+      text-align: center;
+      margin-inline: auto;
+    }
+  }
+</style>

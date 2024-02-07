@@ -1,0 +1,294 @@
+---
+import { Image } from "astro:assets";
+---
+
+<section class="wt-we-do bg-blue">
+  <div class="container">
+    <h2 class="header-primary playfair-44">
+      <div class="wt-we-do__mark mark mark--inverted inria-16">What we do</div>
+      Our mission is to create sustainable work for women in developing nations while
+      helping to slow climate change.
+    </h2>
+    <div class="cards-container flex cards--container--xl">
+      <div class="card">
+        <div class="img-cont">
+          <Image
+            width="200"
+            height="200"
+            src="/public/images/tree-planting.png"
+            alt="plant in a desert"
+          />
+        </div>
+        <div class="card__content">
+          <h3 class="playfair-28">Tree Planting Initiatives</h3>
+          <p class="inria-16">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mi
+            felis, auctor vitae vestibulum vel, consequat eu dolor. Nam
+            pellentesque euismod laoreet.
+          </p>
+          <div class="btn btn--wide">Read more</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="img-cont">
+          <Image
+            width="200"
+            height="200"
+            src="/public/images/education-training.png"
+            alt="A man farming"
+          />
+        </div>
+
+        <div class="card__content">
+          <h3 class="playfair-28">Education and Training</h3>
+          <p class="inria-16">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mi
+            felis, auctor vitae vestibulum vel, consequat eu dolor. Nam
+            pellentesque euismod laoreet.
+          </p>
+          <div class="btn btn--wide">Read more</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="img-cont">
+          <Image
+            width="200"
+            height="200"
+            src="/public/images/advocacy.png"
+            alt="smiling man"
+          />
+        </div>
+
+        <div class="card__content">
+          <h3 class="playfair-28">Advocacy and Campaigning</h3>
+          <p class="inria-16">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mi
+            felis, auctor vitae vestibulum vel, consequat eu dolor. Nam
+            pellentesque euismod laoreet.
+          </p>
+          <div class="btn btn--wide">Read more</div>
+        </div>
+      </div>
+    </div>
+    <div class="flex cards-container cards--container--lg">
+      <div class="card flex-between">
+        <div class="card--right">
+          <div class="img-cont">
+            <Image
+              width="200"
+              height="200"
+              src="/public/images/tree-planting.png"
+              alt="plant in a desert"
+            />
+          </div>
+          <div class="btn btn--wide">Read more</div>
+        </div>
+        <div class="card__content">
+          <h3 class="playfair-28">Tree Planting Initiatives</h3>
+          <p class="inria-16">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mi
+            felis, auctor vitae vestibulum vel, consequat eu dolor. Nam
+            pellentesque euismod laoreet.
+          </p>
+        </div>
+      </div>
+      <div class="card flex-between">
+        <div class="card--right">
+          <div class="img-cont">
+            <Image
+              width="200"
+              height="200"
+              src="/public/images/education-training.png"
+              alt="A man farming"
+            />
+          </div>
+
+          <div class="btn btn--wide">Read more</div>
+        </div>
+        <div class="card__content">
+          <h3 class="playfair-28">Education and Training</h3>
+          <p class="inria-16">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mi
+            felis, auctor vitae vestibulum vel, consequat eu dolor. Nam
+            pellentesque euismod laoreet.
+          </p>
+        </div>
+      </div>
+      <div class="card flex-between">
+        <div class="card--right">
+          <div class="img-cont">
+            <Image
+              width="200"
+              height="200"
+              src="/images/advocacy.png"
+              alt="A man farming"
+            />
+          </div>
+          <div class="btn btn--wide">Read more</div>
+        </div>
+        <div class="card__content">
+          <h3 class="playfair-28">Advocacy and Campaigning</h3>
+          <p class="inria-16">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mi
+            felis, auctor vitae vestibulum vel, consequat eu dolor. Nam
+            pellentesque euismod laoreet.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .wt-we-do__mark {
+    left: 0;
+    top: -8rem;
+    transform: translate(0);
+  }
+
+  .wt-we-do {
+    padding-top: 12rem;
+  }
+
+  .cards-container .card img {
+    width: 32rem;
+    height: 22.4rem;
+    object-fit: cover;
+    transform: translate(3.6rem, -3.6rem);
+  }
+  .cards-container {
+    margin-top: 8rem;
+    gap: 8rem;
+  }
+
+  .card h3 {
+    margin-top: -3rem;
+    margin-bottom: 2rem;
+    font-size: var(--fz-500);
+    font-family: var(--brand-text);
+    font-weight: 800;
+  }
+
+  .card p {
+    margin-bottom: 2rem;
+  }
+  .cards--container--lg {
+    display: none;
+  }
+  /* Responsive */
+
+  @media (max-width: 1300px) {
+    .card {
+      width: 100%;
+      padding: 6.4rem;
+      height: 29rem;
+    }
+
+    .card .card__content {
+      padding: 0rem;
+    }
+
+    .wt-we-do .card .card__content img {
+      min-height: 20rem;
+    }
+
+    .wt-we-do .card .card__content p {
+      width: 90%;
+    }
+    .cards-container {
+      flex-direction: column;
+    }
+
+    .cards--container--lg {
+      display: flex;
+    }
+
+    .cards--container--xl {
+      display: none;
+    }
+
+    .cards--container--lg .card img {
+      margin-right: 3.2rem;
+      top: 50px;
+      transform: translate(-3.2rem, -9.6rem);
+    }
+
+    .cards--container--lg .btn {
+      margin-top: -8rem;
+      margin-left: 15rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .cards--container--lg {
+      display: none;
+    }
+    .card {
+      padding-right: 0rem;
+    }
+
+    .card img {
+      width: 25rem;
+      object-fit: cover;
+    }
+
+    .card .card__content {
+      padding: 2.4rem;
+    }
+    .card .btn {
+      margin-inline: auto;
+    }
+    .cards-container.cards--container--xl {
+      display: block;
+    }
+
+    .cards--container--xl .card {
+      border: 1px solid red;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: fit-content;
+      width: 100%;
+      padding-right: 0;
+      padding-left: 0;
+      margin-bottom: 8rem;
+    }
+
+    .cards-container.cards--container--xl p {
+      text-align: center;
+      min-width: 100%;
+    }
+
+    .cards-container.cards--container--xl .card__content {
+      padding: 1rem 4rem;
+      text-align: center;
+      justify-content: center;
+      align-content: center;
+      margin: 0rem;
+      margin-top: -6rem;
+    }
+
+    .cards-container.cards--container--xl .btn {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cards-container.cards--container--xl .card img {
+      position: relative;
+      left: 50%;
+      top: -9.6rem;
+      transform: translate(-50%, 0);
+    }
+  }
+
+  @media (max-width: 576px) {
+    .cards-container.cards--container--xl .card__content {
+    }
+  }
+
+  @media (max-width: 376px) {
+    .cards--container--xl .card {
+    }
+  }
+</style>

@@ -1,0 +1,159 @@
+---
+import { Image } from "astro:assets";
+---
+
+<section class="our-team">
+  <div class="container">
+    <div class="text-container">
+      <h2 class="header-primary playfair-44">
+        Meet the team of people making it happen.
+        <div class="wt-we-do__mark mark mark--m inria-16">our team</div>
+      </h2>
+      <p class="text-sm inria-20">
+        Our leaders set our global direction, goals and strategies, and support
+        nearly 500 team members working in more than 20 countries around the
+        world.
+      </p>
+    </div>
+    <div class="grid-3">
+      <div class="card">
+        <Image
+          width={320}
+          height={320}
+          src="/images/person-1.png"
+          alt=""
+          class="card__img"
+        />
+        <div class="job-title bg-blue inria-16">
+          Person Name, Title Goes Here
+        </div>
+      </div>
+      <div class="card">
+        <Image
+          width={320}
+          height={320}
+          src="/images/person-2.png"
+          alt=""
+          class="card__img"
+        />
+        <div class="job-title bg-blue inria-16">
+          Person Name, Title Goes Here
+        </div>
+      </div>
+      <div class="card">
+        <Image
+          width={320}
+          height={320}
+          src="/images/person-3.png"
+          alt=""
+          class="card__img"
+        />
+        <div class="job-title bg-blue inria-16">
+          Person Name, Title Goes Here
+        </div>
+      </div>
+      <div class="card">
+        <Image
+          width={320}
+          height={320}
+          src="/images/person-4.png"
+          alt=""
+          class="card__img"
+        />
+        <div class="job-title bg-blue inria-16">
+          Person Name, Title Goes Here
+        </div>
+      </div>
+      <div class="card">
+        <Image
+          width={320}
+          height={320}
+          src="/images/person-5.png"
+          alt=""
+          class="card__img"
+        />
+        <div class="job-title inria-16 bg-blue">
+          Person Name, Title Goes Here
+        </div>
+      </div>
+
+      <div class="card">
+        <Image
+          width={320}
+          height={320}
+          src="/images/person-6.png"
+          alt=""
+          class="card__img"
+        />
+        <div class="job-title inria-16 bg-blue">
+          Person Name, Title Goes Here
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .text-container {
+    display: flex;
+  }
+  .our-team {
+    padding-top: 10rem;
+  }
+  .card {
+    width: 32rem;
+  }
+  .our-team .grid-3 {
+    padding-top: 9rem;
+    gap: 4.6rem;
+  }
+  .job-title {
+    position: absolute;
+    padding: 1.1rem 3.2rem;
+    width: 100%;
+    bottom: -1.4rem;
+    left: 3.2rem;
+  }
+  .header-primary,
+  .text-sm {
+    color: var(--blue);
+  }
+  @media (max-width: 1100px) {
+    .our-team .grid-3 {
+      padding-top: 7rem;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .grid-3 .card {
+      width: 30rem;
+    }
+  }
+  @media (max-width: 768px) {
+    .grid-3 .card {
+      width: 23rem;
+    }
+    .grid-3 .card img {
+      height: auto;
+    }
+    .job-title {
+      font-size: var(--fz-100) !important;
+      padding-left: 1.4rem;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .grid-3 {
+      row-gap: 8rem;
+    }
+    .grid-3 .card {
+      width: 100%;
+    }
+    .job-title {
+      bottom: 0;
+      left: 0;
+      transform: translateY(100%);
+    }
+    .our-team .grid-3 {
+      padding-bottom: 7rem;
+    }
+  }
+</style>

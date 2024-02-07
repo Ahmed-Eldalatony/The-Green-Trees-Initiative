@@ -1,0 +1,61 @@
+<section class="contact bg-green">
+  <div class="container">
+    <div class="contact__flex">
+      <p class="text-md">
+        Subscribe to our monthly newsletter and stay up to date with all news
+        and events.
+      </p>
+      <input class="input" placeholder="Enter your email address" type="mail" />
+      <div class="btn btn--inverted btn--wide">Read more</div>
+    </div>
+  </div>
+</section>
+<style>
+  .contact__flex {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .contact .text-md {
+    columns: var(--blue);
+    width: 35ch;
+    margin-bottom: 0;
+  }
+
+  .input {
+    padding: 1.2rem 2rem;
+    border-radius: 100vw;
+    color: var(--blue);
+    font-size: var(--fz-300);
+    font-weight: 500;
+    border: none;
+    width: 27%;
+    transition: 150ms all;
+  }
+
+  .input::placeholder {
+    color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+  }
+
+  .input:focus {
+    outline: #354463 3px solid;
+  }
+  @media (max-width: 1100px) {
+    .input {
+      min-width: 70%;
+    }
+    .contact .text-md {
+      width: 40ch;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .input {
+      min-width: 55%;
+    }
+  }
+</style>

@@ -1,0 +1,164 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+---
+
+<section class="bg-blue">
+  <div class="container">
+    <h2 class="flod-72">TAKE A LOOK BACK AT WHERE WE’VE BEEN</h2>
+
+    <Icon class="arrow arrow--right" name="bi:arrow-right" />
+    <Icon class="arrow arrow--left" name="bi:arrow-left" />
+  </div>
+  <div class="scroll container container__p">
+    <div class="flex carousel">
+      <div class="card">
+        <div class="mark mark--inverted">2016</div>
+
+        <Image
+          class="card__img"
+          src="/images/history.png"
+          width="545"
+          height="394"
+          alt="Image of people suffering"
+        />
+        <div class="card__content">
+          <h3 class="card__head">
+            Training to rural women and community-based organizations
+          </h3>
+          <p class="card__p inria-16">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mi
+            felis, auctor vitae vestibulum vel, consequat eu dolor.
+          </p>
+          <button class="btn btn--wide">Read more</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="mark mark--inverted">2018</div>
+        <Image
+          class="card__img"
+          src="/images/history.png"
+          width="545"
+          height="394"
+          alt="Image of people suffering"
+        />
+        <div class="card__content">
+          <h3 class="card__head">
+            Training to rural women and community-based organizations
+          </h3>
+          <p class="card__p inria-16">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mi
+            felis, auctor vitae vestibulum vel, consequat eu dolor.
+          </p>
+          <button class="btn btn--wide">Read more</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="mark mark--inverted">2020</div>
+        <Image
+          class="card__img"
+          src="/images/history.png"
+          width="545"
+          height="394"
+          alt="Image of people suffering"
+        />
+        <div class="card__content">
+          <h3 class="card__head">
+            Training to rural women and community-based organizations
+          </h3>
+          <p class="card__p inria-16">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mi
+            felis, auctor vitae vestibulum vel, consequat eu dolor.
+          </p>
+          <button class="btn btn--wide">Read more</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      const arrows = document.querySelectorAll(".arrow");
+      const arrowRight: HTMLElement = document.querySelector(".arrow--right");
+      const arrowLeft: HTMLElement = document.querySelector(".arrow--left");
+      const carousel: HTMLElement = document.querySelector(".carousel");
+      // ! I didi that because iam lazy but this isn't the best approach but it's just two states
+      arrows.forEach((arrow) => {
+        arrow.addEventListener("click", (e) => {
+          if (e.target === arrowRight) {
+            carousel.style.transform = "translateX(-500px)";
+          }
+          if (e.target === arrowLeft) {
+            carousel.style.transform = "translateX(0px)";
+          }
+          if (carousel.style.transform === "translateX(-500px)") {
+            arrowRight.style.opacity = "0";
+            arrowLeft.style.opacity = "1";
+          }
+          if (carousel.style.transform === "translateX(0px)") {
+            arrowRight.style.opacity = "1";
+            arrowLeft.style.opacity = "0";
+          }
+        });
+      });
+    </script>
+    <style>
+      .flod-72 {
+        width: 18ch;
+      }
+      .card {
+        width: 53.5rem;
+        flex-grow: 1;
+        flex-shrink: 0;
+        /* make it's own component */
+      }
+      .card * {
+        color: var(--blue);
+      }
+      .carousel {
+        display: flex;
+        gap: 3.2rem;
+        transition: transform 0.3s ease-in-out;
+      }
+      .scroll {
+        padding-top: 8rem;
+        overflow-x: hidden;
+      }
+      .arrow {
+        background-color: var(--green);
+        padding: 1rem;
+        color: var(--blue);
+        width: 6.4rem;
+        min-height: 6.4rem;
+        border-radius: 10rem;
+        position: absolute;
+        cursor: pointer;
+        top: 12rem;
+        transition: opacity 0.2s ease-in-out;
+      }
+      .arrow--right {
+        right: 16rem;
+      }
+      .arrow--left {
+        right: 28rem;
+        opacity: 0;
+      }
+      .card__head {
+        font-size: var(--fz-500);
+        width: 100%;
+        line-height: 36px;
+        margin-bottom: 0;
+      }
+      .card__content {
+        padding: 6.4rem 0 6.4rem 6.4rem;
+        padding-left: 6.4rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2.4rem;
+      }
+      .mark {
+        z-index: 100;
+      }
+      .container__p {
+        padding: 2rem 12rem 12rem 12rem;
+      }
+    </style>
+  </div>
+</section>

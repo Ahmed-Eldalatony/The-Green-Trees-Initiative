@@ -1,0 +1,21 @@
+---
+import Layout from "../layouts/Layout.astro";
+import AboutTheIssue from "../components/About-TheIssue.astro";
+import AboutWtWeDo from "../components/About-Wt-We-Do.astro";
+import OurTeam from "../components/Our-Team.astro";
+import OurImpact from "../components/Our-Impact.astro";
+import History from "../components/History.astro";
+import Contact from "../components/header-and-footer/Contact.astro";
+---
+
+<Layout title="the green tree intetiative">
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/media.css" />
+
+  <AboutTheIssue />
+  <AboutWtWeDo />
+  <OurTeam />
+  <OurImpact />
+  <History client:visible />
+  <Contact />
+</Layout>

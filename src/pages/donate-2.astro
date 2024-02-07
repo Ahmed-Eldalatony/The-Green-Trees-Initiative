@@ -1,0 +1,210 @@
+---
+import LayoutSimple from "../layouts/LayoutSimple.astro";
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+---
+
+<section>
+  <LayoutSimple title="Donate">
+    <section class="hero-section flex-between">
+      <Image
+        src="/public/images/Eating boy.png"
+        width={1000}
+        height={1000}
+        alt=""
+      />
+      <div class="container flex-between">
+        <div class="card card--wide bg-blue">
+          <div class="playfair-28">Your infromation</div>
+          <form class="grid-4">
+            <div class="input-container">
+              <input
+                class="donation-input inria-20"
+                id="first-name"
+                type="text"
+                placeholder="First name"
+              />
+              <label class="inria-16" for="first-name"> First Name</label>
+            </div>
+            <div class="input-container">
+              <input
+                class="donation-input inria-20"
+                id="last-name"
+                type="text"
+              />
+              <label class="inria-16" for="first-name"> Last Name</label>
+            </div>
+            <div class="input-container input-container--full">
+              <input
+                class="donation-input inria-20"
+                id="last-name"
+                type="text"
+              />
+
+              <label class="inria-16" for="first-name">Street Address</label>
+            </div>
+            <div class="input-container">
+              <input class="donation-input inria-20" id="city" type="text" />
+
+              <label class="inria-16" for="first-name">City</label>
+            </div>
+            <div class="input-container input-container--sm">
+              <input class="donation-input inria-20" id="state" type="text" />
+
+              <label class="inria-16" for="first-name">state</label>
+            </div>
+            <div class="input-container input-container--sm">
+              <input
+                class="donation-input inria-20"
+                id="zip-code"
+                type="text"
+              />
+
+              <label class="inria-16" for="first-name">zip code</label>
+            </div>
+            <div class="input-container input-container--full">
+              <input class="donation-input inria-20" id="email" type="email" />
+
+              <label class="inria-16" for="first-name">Email Address</label>
+            </div>
+            <p class="playfair-28">Payment infromation</p>
+            <div class="input-container input-container--full">
+              <input
+                class="donation-input inria-20"
+                id="credit-card"
+                type="text"
+              />
+
+              <label class="inria-16" for="credit-card"
+                >Credit card number</label
+              >
+            </div>
+            <div class="input-container input-container--sm">
+              <input
+                class="donation-input inria-20"
+                id="expiration"
+                type="text"
+                placeholder="MM"
+              />
+
+              <label class="inria-16" for="expiration">expiration</label>
+            </div>
+            <div class="input-container input-container--sm">
+              <input
+                class="donation-input inria-20"
+                id="security-code"
+                type="text"
+                placeholder="YYYY"
+              />
+              <label class="inria-16" for="first-name"></label>
+            </div>
+            <div class="input-container input-container--sm">
+              <input
+                class="donation-input inria-20"
+                id="zip-code"
+                type="text"
+                placeholder="CVC"
+              />
+
+              <label class="inria-16" for="first-name">security code</label>
+            </div>
+          </form>
+
+          <p class="playfair-28">
+            Click the button to confirm your donation of $10, recurring monthly.
+          </p>
+          <div class="flex-between flex--center">
+            <span class="sm-note inria-16">Go Back</span>
+            <a href="/donate-2" class="btn btn--wide">Process Payment</a>
+          </div>
+        </div>
+        <p class="flod-72 tag">Give HOPE to those Who need It most</p>
+      </div>
+    </section>
+  </LayoutSimple>
+  <style>
+    .sm-note {
+      margin-top: 1rem;
+      cursor: pointer;
+      opacity: 0.8;
+    }
+
+    .card {
+      width: 64rem;
+      min-height: 107rem;
+    }
+    .playfair-28 {
+      margin-bottom: 0rem;
+    }
+
+    .input-container {
+      position: relative;
+      grid-column: span 2;
+      min-height: 6.5rem;
+    }
+    .input-container input {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding-bottom: 0.2rem;
+      background-color: transparent;
+      border: none;
+      border-bottom: 1px solid var(--green);
+      width: 99%;
+      color: white;
+      z-index: 100;
+    }
+    .input-container input::placeholder {
+      color: transparent;
+    }
+    .input-container input:focus {
+      outline: none;
+    }
+
+    .input-container:nth-of-type(9) input:focus::placeholder,
+    .input-container:nth-of-type(10) input:focus::placeholder,
+    .input-container:nth-of-type(11) input:focus::placeholder {
+      color: white;
+    }
+
+    .input-container:nth-of-type(11) label {
+      width: 16rem;
+    }
+    .inria-16 {
+      text-transform: uppercase;
+    }
+    .input-container--full {
+      grid-column: span 4;
+    }
+    .input-container--full input {
+      width: 100% !important;
+    }
+    label {
+      position: absolute;
+      top: 35px;
+      transition: all 0.2s ease;
+      transform: scale(0.92);
+    }
+    .input-container input:focus ~ label {
+      top: 10px;
+      transform: scale(1);
+    }
+    .input-container--sm {
+      grid-column: span 1;
+    }
+    .input-container{
+      padding: 0;
+    }
+    p.playfair-28 {
+      grid-column: span 4;
+    }
+    .playfair-28:last-of-type {
+      margin-top: 6.4rem;
+      padding-right: 1rem;
+    }
+    .flex--center {
+      margin-top: 6.4rem;
+    }
+   
+  </style>
+</section>

@@ -1,0 +1,75 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+---
+
+<Layout title="Thanks for your donation">
+  <section class="hero-section flex-between">
+    <Image
+      src="/public/images/babies.jpg"
+      width={1000}
+      height={1000}
+      alt=""
+    />
+    <div class="flex-between container">
+      <p class="playfair-44">
+        Thank you. Your donation helps support families in need and fights
+        climate change.
+      </p>
+      <div class="card card--wide flex-between">
+        <div class="mark inria-16">Share</div>
+        <q class="playfair-28">
+          I just donated to The Green Trees Initiative to help support families
+          and fight climate change. Join me?
+        </q>
+        <div class="share-with ">
+          <button class="share-btn btn btn--wide inria-16">
+            <Icon name="entypo-social:twitter" color="#3b5998" />
+            <span> Twitter</span>
+          </button>
+          <button class="share-btn btn btn--wide inria-16">
+            <Icon name="entypo-social:facebook" color="#3b5998" />
+            <span> Facebook</span>
+          </button>
+          <button class="share-btn btn btn--wide inria-16">
+            <Icon name="bi:envelope-at-fill" />
+            <span> email</span>
+          </button>
+          <button class="share-btn btn btn--wide inria-16">
+            <Icon name="bi:chat-left-fill" />
+            <span> text</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+<style>
+  .playfair-44 {
+    width: 40.5rem;
+    color: white;
+  }
+  .playfair-28 {
+    width: 24rem !important;
+  }
+  .share-with {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .share-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    text-transform: uppercase;
+  }
+  svg {
+    width: 1.6rem;
+  }
+  .contact{
+    display: none;
+  }
+</style>

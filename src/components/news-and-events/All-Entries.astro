@@ -1,0 +1,281 @@
+---
+import "../../scripts/main.js";
+import { Image } from "astro:assets";
+---
+
+<section>
+  <div class="container">
+    <div class="flex-between all-entries">
+      <h2 class="playfair-44">ALL ENTRIES</h2>
+      <div class="tab-group-container">
+        <ul class="tab-group inria-16">
+          <span class="tab-container"></span>
+          <li class="active" data-index="0" data-filter="all" id="news">All</li>
+          <li data-index="1" data-filter="events">Events</li>
+          <li data-index="2" data-filter="news">News</li>
+        </ul>
+      </div>
+    </div>
+    <div class="grid-bento">
+      <div data-filter="all" id="news" class="tab-value bg-blue card">
+        <span class="mark mark--md mark--inverted inria-16">News Post</span>
+        <Image
+          class="card__img"
+          src="/public/images/education-training.png"
+          width="256"
+          height="216"
+          alt="education training"
+        />
+        <div class="card__content">
+          <p class="playfair-22">
+            Lorem ipsum dolor sit amet, consectet adipiscing elit.
+          </p>
+          <div class="read-btn inria-16 mt-40">read this post</div>
+        </div>
+      </div>
+      <div data-filter="all" id="news" class="tab-value bg-blue card">
+        <span class="mark mark--md mark--inverted inria-16">News Post</span>
+        <Image
+          class="card__img"
+          src="/public/images/education-training.png"
+          width="256"
+          height="216"
+          alt="education training"
+        />
+        <div class="card__content">
+          <p class="playfair-22">
+            Lorem ipsum dolor sit amet, consectet adipiscing elit.
+          </p>
+          <div class="read-btn inria-16 mt-40">read this post</div>
+        </div>
+      </div>
+      <div
+        data-filter="all"
+        id="events"
+        class="tab-value bg-blue card card--event"
+      >
+        <span class="mark mark--inverted inria-16">event</span>
+        <div class="card__content">
+          <p class="playfair-36">
+            Tree planting initiative in Green Fields Park.
+          </p>
+          <div class="read-btn inria-16 mt-40">read this post</div>
+        </div>
+        <Image
+          class="card__img"
+          src="/public/images/tree-planting.png"
+          width="256"
+          height="216"
+          alt="education training"
+        />
+      </div>
+      <div
+        data-filter="all"
+        id="events"
+        class="tab-value bg-blue card card--event"
+      >
+        <span class="mark mark--inverted inria-16">event</span>
+        <div class="card__content">
+          <p class="playfair-36">
+            Tree planting initiative in Green Fields Park.
+          </p>
+          <div class="read-btn inria-16 mt-40">read this post</div>
+        </div>
+        <Image
+          class="card__img"
+          src="/public/images/tree-planting.png"
+          width="256"
+          height="216"
+          alt="education training"
+        />
+      </div>
+      <div data-filter="all" id="news" class="tab-value bg-blue card">
+        <span class="mark mark--md mark--inverted inria-16">News Post</span>
+        <Image
+          class="card__img"
+          src="/public/images/education-training.png"
+          width="256"
+          height="216"
+          alt="education training"
+        />
+        <div class="card__content">
+          <p class="playfair-22">
+            Lorem ipsum dolor sit amet, consectet adipiscing elit.
+          </p>
+          <div class="read-btn inria-16 mt-40">read this post</div>
+        </div>
+      </div>
+      <div data-filter="all" id="news" class="tab-value bg-blue card">
+        <span class="mark mark--md mark--inverted inria-16">News Post</span>
+        <Image
+          class="card__img"
+          src="/public/images/education-training.png"
+          width="256"
+          height="216"
+          alt="education training"
+        />
+        <div class="card__content">
+          <p class="playfair-22">
+            Lorem ipsum dolor sit amet, consectet adipiscing elit.
+          </p>
+          <div class="read-btn inria-16 mt-40">read this post</div>
+        </div>
+      </div>
+      <div data-filter="all" id="news" class="tab-value bg-blue card">
+        <span class="mark mark--md mark--inverted inria-16">News Post</span>
+        <Image
+          class="card__img"
+          src="/public/images/education-training.png"
+          width="256"
+          height="216"
+          alt="education training"
+        />
+        <div class="card__content">
+          <p class="playfair-22">
+            Lorem ipsum dolor sit amet, consectet adipiscing elit.
+          </p>
+          <div class="read-btn inria-16 mt-40">read this post</div>
+        </div>
+      </div>
+      <div
+        data-filter="all"
+        id="events"
+        class="tab-value bg-blue card card--event"
+      >
+        <span class="mark mark--inverted inria-16">event</span>
+        <div class="card__content">
+          <p class="playfair-36">
+            Tree planting initiative in Green Fields Park.
+          </p>
+          <div class="read-btn inria-16 mt-40">read this post</div>
+        </div>
+        <Image
+          class="card__img"
+          src="/public/images/tree-planting.png"
+          width="256"
+          height="216"
+          alt="education training"
+        />
+      </div>
+      <div data-filter="all" id="news" class="tab-value bg-blue card">
+        <span class="mark mark--md mark--inverted inria-16">News Post</span>
+        <Image
+          class="card__img"
+          src="/public/images/education-training.png"
+          width="256"
+          height="216"
+          alt="education training"
+        />
+        <div class="card__content">
+          <p class="playfair-22">
+            Lorem ipsum dolor sit amet, consectet adipiscing elit.
+          </p>
+          <div class="read-btn inria-16 mt-40">read this post</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  import "../../scripts/tabsForEntries"
+</script>
+<style>
+  .tab-group {
+    width: fit-content;
+    display: flex;
+    background-color: var(--blue);
+    gap: 1rem;
+    color: var(--green);
+    padding: 1rem;
+    padding-right: 1.6rem;
+    position: relative;
+    right: 0;
+    top: 0;
+    border-radius: 10rem;
+    cursor: pointer;
+  }
+  .read-btn {
+    cursor: pointer;
+  }
+  .playfair-44 {
+    color: var(--blue);
+  }
+  .card__content {
+    padding-top: 4rem;
+  }
+  .tab-group li {
+    padding: 0.4rem 0;
+    min-width: 11rem;
+    text-align: center;
+    border-radius: 10rem;
+    position: relative;
+    z-index: 200;
+  }
+  .tab-group li:hover {
+    opacity: 0.8;
+  }
+  .active {
+    color: var(--blue);
+  }
+  .tab-group-container {
+    width: fit-content;
+    height: 6rem;
+    top: 5rem;
+    right: 0;
+  }
+  .tab-container {
+    position: absolute;
+    top: 8px;
+    left: calc(var(--move) + 8px);
+    z-index: 100;
+    background-color: white;
+    min-width: 12rem;
+    height: 70%;
+    transform: translateX(var(--move));
+    transition: left 0.3s ease;
+    border-radius: 10rem;
+    display: block;
+  }
+  .tab-value {
+    animation: move 0.3s ease;
+  }
+  .grid-bento {
+    display: grid;
+    margin-top: 8rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3.2rem;
+    margin-left: -1rem;
+  }
+  .mark {
+    top: 20rem;
+    left: 3.2rem;
+  }
+  @keyframes move {
+    from {
+      transform: translateX(50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  .card--event {
+    grid-column: span 2;
+  }
+  .card:not(:last-child) {
+    min-width: 27rem;
+  }
+  .card--event .read-btn {
+    margin-top: 1rem;
+    margin-bottom: 2.2rem;
+  }
+  .card--event img {
+    object-fit: cover;
+    object-position: top;
+  }
+
+  .card--event .mark {
+    top: 19.5rem;
+  }
+</style>

@@ -1,0 +1,252 @@
+---
+import { Image } from "astro:assets";
+---
+
+<div class="events-xl">
+  <section class="event bg-blue">
+    <div class="container">
+      <div class="center">
+        <p class="tag flod-72">LET'S Take action now to save the future</p>
+        <div class="card--fluid">
+          <div class="img-cont">
+            <Image
+              width="500"
+              height="500"
+              src="/images/tree-planting.png"
+              alt=""
+            />
+          </div>
+          <div class="card__text">
+            <div class="mark mark--static mark--inverted inria-16 mark--start">
+              event
+            </div>
+            <h4 class="header-primary playfair-44">
+              Earth Day 2023 community tree planting event
+            </h4>
+            <p class="card__p inria-20">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
+              nostrum omnis ducimus error reiciendis! Ab, illum, assumenda quos
+              nemo sapiente enim provident a beatae aut placeat, ratione sunt
+              porro quis.
+            </p>
+            <div class="btn btn--wide">Read more</div>
+          </div>
+        </div>
+        <div class="card--fluid">
+          <!-- <p class="tag flod-72">LET'S Take action now to save the future</p> -->
+          <div class="card__text">
+            <div
+              class="mark mark--static mark--inverted mark--start mark--md inria-16"
+            >
+              Latest news
+            </div>
+            <h4 class="header-primary playfair-44">
+              Updates from the fall quarterly meeting
+            </h4>
+            <p class="card__p inria-20">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
+              nostrum omnis ducimus error reiciendis! Ab, illum, assumenda quos
+              nemo sapiente enim provident a beatae aut placeat, ratione sunt
+              porro quis.
+            </p>
+            <div class="btn btn--wide">Read more</div>
+          </div>
+          <div class="img-cont">
+            <Image
+              width="500"
+              height="500"
+              src="/public/images/meeting.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<!-- ! Events and News -->
+<section class="events-sm bg-blue">
+  <div class="cards-container container carousel">
+    <div class="img-cont">
+      <div class="mark mark--inverted inria-16">events</div>
+      <Image
+        width="640"
+        height="568"
+        src="/images/old man.png"
+        alt="an old man"
+      />
+    </div>
+    <div class="right">
+      <div class="card--inverted">
+        <h3 class="header-primary">
+          Earth Day 2018 community tree planting event
+        </h3>
+        <p class="inria-16">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mi
+          felis, auctor vitae vestibulum vel, consequat eu dolor. Nam
+          pellentesque euismod laoreet. Aliquam sed nisl porttitor nisl laoreet
+          semper nec iaculis nibh. Curabitur in tortor lorem.
+        </p>
+      </div>
+      <div class="btn btn--wide">Read more</div>
+    </div>
+  </div>
+  <div class="cards-container container carousel">
+    <div class="img-cont">
+      <div class="mark mark--inverted inria-16">Latest News</div>
+      <Image
+        width="640"
+        height="568"
+        src="/images/old man.png"
+        alt="an old man"
+      />
+    </div>
+    <div class="right">
+      <div class="card--inverted">
+        <h3 class="header-primary">Updates from the fall quarterly meeting</h3>
+        <p class="inria-16">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mi
+          felis, auctor vitae vestibulum vel, consequat eu dolor. Nam
+          pellentesque euismod laoreet. Aliquam sed nisl porttitor nisl laoreet
+          semper nec iaculis nibh. Curabitur in tortor lorem.
+        </p>
+      </div>
+      <div class="btn btn--wide">Read more</div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .events-sm {
+    display: none;
+  }
+  .event .card--fluid:last-of-type img {
+    margin-left: -2.4rem;
+  }
+
+  .events-xl .header-primary {
+    width: 17ch;
+  }
+
+  .events-xl .tag {
+    width: 20ch;
+    margin-bottom: 7rem;
+  }
+
+  .events-sm img,
+  .events-xl img {
+    object-fit: cover;
+  }
+
+  .img-cont {
+    position: relative;
+  }
+
+  @media (max-width: 1100px) {
+    .events-xl .container {
+      justify-content: unset;
+    }
+    .events-xl .header-primary {
+      font-size: var(--fz-700);
+      line-height: 1.1;
+    }
+    .events-xl .event img {
+      width: 28rem;
+      height: 28rem;
+      margin-top: -16rem;
+    }
+
+    .card--fluid {
+      gap: 7rem;
+    }
+
+    .events-sm .card--inverted .text-md {
+      font-size: var(--fz-300);
+    }
+    .events-xl .card__p {
+      font-size: var(--fz-300);
+      width: 35ch;
+    }
+
+    .events-sm img {
+      height: 35rem;
+      width: 40rem;
+    }
+  }
+  @media (max-width: 768px) {
+    .events-xl {
+      display: none;
+    }
+
+    .events-sm {
+      display: block;
+    }
+    .events-sm .cards-container:last-of-type .mark {
+      min-width: 18rem;
+    }
+    .events-sm .card--inverted {
+      margin-top: -0.5rem;
+    }
+    .events-sm .cards-container {
+      flex-direction: column;
+    }
+    .events-sm .cards-container .right {
+      order: 0;
+      /* width: 90%; */
+    }
+    .events-sm .card__p {
+      width: 26rem;
+    }
+    .event img {
+      width: 25rem;
+      height: 25rem;
+      margin-top: -25rem;
+    }
+    .events-sm .btn {
+      margin-top: 0rem;
+      margin-bottom: 2rem;
+      margin-inline: auto;
+    }
+    .events-sm .cards-container .img-cont {
+      /* margin-left: 10rem; */
+    }
+
+    .events-sm .card--inverted {
+      text-align: center;
+    }
+
+    .events-sm .img-cont img {
+      width: 100%;
+    }
+    .events-sm .img-cont .mark {
+      left: 50% !important;
+      transform: translateX(-50%);
+    }
+    .cards-container {
+      /* margin-left: -10rem; */
+    }
+    .cards-container {
+      text-align: start;
+    }
+    .right .card--inverted {
+      /* width: 90% !important; */
+      margin-inline: auto;
+    }
+    @media (max-width: 576px) {
+      .events-sm .card--inverted .text-md,
+      .events-sm .card--inverted {
+        text-align: center;
+      }
+      .header-primary {
+        font-size: var(--fz-500);
+      }
+      .events-sm .card--inverted {
+        padding: 2rem;
+      }
+    }
+  }
+</style>
+<!-- .cards-container {
+    /* display: flex; */
+    /* align-items: center; */
+  } -->

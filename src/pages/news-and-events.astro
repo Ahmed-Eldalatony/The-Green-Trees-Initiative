@@ -1,0 +1,15 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+import LatestPost from "../components/news-and-events/Latest-Post.astro";
+import AllEntries from "../components/news-and-events/All-Entries.astro";
+import Contact from "../components/header-and-footer/Contact.astro";
+---
+
+<Layout title="News and Events">
+  <LatestPost />
+  <AllEntries client:visible />
+
+  <Contact />
+
+</Layout>

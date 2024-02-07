@@ -1,0 +1,222 @@
+---
+import { Image } from "astro:assets";
+const desscription1 =
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec aliquet nunc, id consectetur lorem. Donec pretium est sed ornare bibendum. In tincidunt lacus vitae ullamcorper euismod. Praesent laoreet dui mattis, consectetur elit at, tincidunt magna. Aenean feugiat arcu ante, id pharetra tortor accumsan ut.";
+const desscription2 =
+  " Aliquam pellentesque nulla congue aliquam viverra. Ut cursus sollicitudin metus nec tristique. Sed eget elementum quam, non mollis orci. Aliquam dignissim, augue ac pretium suscipit, eros enim fermentum ante, et congue lectus metus nec dui. Nunc et ipsum aliquam, sodales mi eu, varius odio. Proin porta nulla nec ex blandit, nec ornare lorem ullamcorper.";
+---
+
+<section class="work-stories bg-blue">
+  <div class="container">
+    <div class="flex-between">
+      <div>
+        <h1 class="playfair-44">stories of our work</h1>
+        <div>
+          <ul class="tab-group">
+            <div class="tab-container"></div>
+            <li data-filter="claudine" class="inria-16 active">
+              CLAUDINE, NIGERIA
+            </li>
+            <li data-filter="marcus" class="inria-16">MARCUS, NIGERIA</li>
+            <li data-filter="cartias" class="inria-16">CARITAS, RWANDA</li>
+            <li data-filter="euphrasie" class="inria-16">EUPHRASIE, RWANDA</li>
+
+            <li data-filter="unis" class="inria-16">UNIS, SUDAN</li>
+            <li data-filter="raji" class="inria-16">RAJI, SUDAN</li>
+          </ul>
+        </div>
+      </div>
+      <div data-char="claudine">
+        <Image
+          src="/public/images/story-1.png"
+          width="768"
+          height="464"
+          alt="CLAUDINE, NIGERIA"
+        />
+        <!-- <h2 class="mt-40 playfair-44">CLAUDINE, NIGERIA</h2> -->
+      </div>
+      <div data-char="marcus">
+        <Image
+          src="/public/images/story-2.png"
+          width="768"
+          height="464"
+          alt="MARCUS, NIGERIA"
+        />
+      </div>
+      <div data-char="cartias">
+        <Image
+          src="/public/images/story-3.png"
+          width="768"
+          height="464"
+          alt="CARITAS, RWANDA"
+        />
+      </div>
+      <div data-char="euphrasie">
+        <Image
+          src="/public/images/story-4.png"
+          width="768"
+          height="464"
+          alt="Euphrasie, RWANDA"
+        />
+      </div>
+      <div data-char="unis">
+        <Image
+          src="/public/images/story-5.png"
+          width="768"
+          height="464"
+          alt="UNIS, SUDAN"
+        />
+      </div>
+      <div data-char="raji">
+        <Image
+          src="/public/images/story-6.png"
+          width="768"
+          height="464"
+          alt="Raji, SUDAN"
+        />
+      </div>
+    </div>
+    <div class="flex-between mt-40">
+      <div>
+        <div class="card card--wide">
+          <q class="playfair-28">
+            Donec felis nunc, cursus molestie odio ut, aliquet euismod libero.
+            Etiam ipsum nibh, interdum et consequat et, tincidunt quis sem.
+            Suspendisse lobortis rises et.
+          </q>
+        </div>
+        <div class="card--img">
+          <Image
+            width={544}
+            height={336}
+            src="/public/images/tree-planting.png"
+            alt="tree planting"
+          />
+        </div>
+      </div>
+
+      <div>
+        <h1 class="playfair-44" id="char-name">ClAUDINE, NIGERIA</h1>
+        <p class="inria-20">{desscription1}</p>
+        <p class="inria-20">{desscription2}</p>
+        <button id="next-btn" class="btn btn--wide">Next Story</button>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  const tabs = document.querySelectorAll(".tab-group li");
+  const dataChars = document.querySelectorAll("[data-char]");
+  var charName = document.getElementById("char-name");
+  tabs.forEach((tab, index) => {
+    tab.addEventListener("click", (e) => {
+      const tabDataFilter = tab.getAttribute("data-filter");
+      // console.log(
+      document.documentElement.style.setProperty(
+        "--move",
+        +index * 5 + "rem"
+        //   )
+      );
+      tabs.forEach((tab) => tab.classList.remove("active"));
+      tab.classList.add("active");
+      charName.innerHTML = tab.innerHTML;
+      console.log(charName);
+      dataChars.forEach((dataChar) => {
+        dataChar.style.display = "none";
+        if (dataChar.id === tabDataFilter) {
+          dataChar.style.display = "block";
+        }
+        if (dataChar.getAttribute("data-char") === tabDataFilter) {
+          dataChar.style.display = "block";
+        }
+      });
+    });
+  });
+  const nextBtn = document.getElementById("next-btn");
+  const nextStory = function (e) {
+    const tabsArr = Array.from(tabs);
+    const active = document.querySelector(".active");
+   const activeIndex= tabsArr.indexOf(active);
+    // console.log(tabsArr.indexOf(active))
+    tabsArr[activeIndex + 1].click();
+  };
+  nextBtn.addEventListener("click", nextStory);
+</script>
+<style>
+  [data-char] {
+    display: none;
+  }
+  [data-char="claudine"] {
+    display: block;
+  }
+  .inria-20 {
+    line-height: 32px;
+    margin-bottom: 3.2rem;
+  }
+  .card--wide {
+    min-width: 54.4rem;
+    max-height: 33.6rem;
+  }
+  .playfair-44 {
+    width: 10ch;
+  }
+  #char-name.playfair-44 {
+    margin-bottom: 3.2rem;
+    width: 100%;
+  }
+  .flex-between {
+    gap: 6rem;
+  }
+  .active {
+    color: var(--blue) !important;
+  }
+
+  .tab-group {
+    margin-top: 7rem;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    min-width: 28.8rem;
+    gap: 1rem;
+    color: rgb(255, 255, 255);
+    padding-right: 1.6rem;
+    position: relative;
+    border-radius: 10rem;
+    cursor: pointer;
+  }
+  .tab-group li {
+    position: relative;
+    cursor: pointer;
+    color: white;
+    padding: 0.8rem 3.2rem;
+    z-index: 100;
+  }
+  .tab-container {
+    position: absolute;
+    top: var(--move);
+    animation: move 0.3s ease;
+    z-index: 100;
+    background-color: var(--green);
+    min-width: 100%;
+    height: 4rem;
+    transition: top 0.3s ease;
+    display: block;
+  }
+  [data-char] {
+    animation: move 0.3s ease;
+  }
+
+  @keyframes move {
+    from {
+      transform: translateX(50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  .card--img {
+    margin-top: 6.4rem;
+  }
+</style>

@@ -1,0 +1,577 @@
+:root {
+  font-size: 62.5%;
+  --fz-80: 1.1rem;
+  --move: 0;
+  --fz-100: 1.4rem;
+  --fz-200: 1.6rem;
+  --fz-300: 1.8rem;
+  --fz-350: 2rem;
+  --fz-400: 2.2rem;
+  --fz-500: 2.8rem;
+  --fz-600: 3.2rem;
+  --fz-700: 3.6rem;
+  --fz-800: 4.4rem;
+  --fz-900: 6rem;
+  --fz-1000: 7.2rem;
+  --blue: #354463;
+  --green: #c1f7d5;
+  --inria: "Inria Sans", sans-serif;
+  --flood: "flood-std", sans-serif;
+  --playfair: "playfair", serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  z-index: 10;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: var(--small-text);
+  background-color: white;
+}
+
+
+a {
+  color: var(--blue);
+}
+
+
+/*!  Font System */
+.flod-72 {
+  font-family: var(--flood);
+  font-size: var(--fz-1000);
+  font-weight: 400;
+}
+
+.flod-44 {
+  font-family: var(--flood);
+  font-size: var(--fz-800);
+  font-weight: 400;
+}
+
+.flod-32 {
+  font-family: var(--flood);
+  font-size: var(--fz-600);
+  font-weight: 400;
+}
+
+.playfair-60 {
+  font-family: var(--playfair);
+  font-size: var(--fz-900);
+  font-weight: 900;
+}
+
+.playfair-44 {
+  font-family: var(--playfair);
+  font-size: var(--fz-800);
+  font-weight: 900;
+  line-height: 56px;
+}
+
+.playfair-36 {
+  font-family: var(--playfair);
+  font-size: var(--fz-700);
+  font-weight: 900;
+  line-height: 46px;
+}
+
+.playfair-28 {
+  font-family: var(--playfair);
+  font-size: var(--fz-500);
+  font-weight: 900;
+  line-height: 36px;
+}
+
+.playfair-22 {
+  font-family: var(--playfair);
+  font-size: var(--fz-400);
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: 1px;
+}
+
+.playfair-18 {
+  font-family: var(--playfair);
+  font-size: var(--fz-300);
+  font-weight: 900;
+  line-height: 22px;
+}
+
+.playfair-16 {
+  font-family: var(--playfair);
+  font-size: var(--fz-200);
+  font-weight: 900;
+  line-height: 20px;
+}
+
+.inria-16 {
+  font-family: var(--inria) !important;
+  font-size: var(--fz-200) !important;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.inria-14 {
+  font-family: var(--inria);
+  font-size: var(--fz-100);
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.inria-11 {
+  font-family: var(--inria);
+  font-size: var(--fz-100);
+  font-weight: 400;
+  line-height: 14px;
+}
+
+.inria-20 {
+  font-family: var(--inria);
+  font-size: var(--fz-350);
+  font-weight: 300;
+  line-height: 20px;
+}
+
+/* !Components */
+.container {
+  width: 144rem;
+  margin: 0 auto;
+  padding: 10rem 16rem;
+  position: relative;
+  border: solid 1px green;
+}
+
+.container__p {
+  padding: 0rem 16rem;
+}
+
+.cards-container--vertically {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  top: 10rem;
+  right: 0rem;
+}
+
+.logo {
+  color: var(--blue);
+  width: 15ch;
+  display: block;
+}
+
+.btn {
+  font-family: var(--brand-text);
+  padding: 0.6rem 1.6rem;
+  border-radius: 10rem;
+  font-size: var(--fz-300);
+  font-weight: 800;
+  background-color: var(--green);
+  color: var(--blue) !important;
+  width: fit-content;
+  border: none;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+.mark {
+  text-transform: uppercase;
+  min-width: 15rem;
+  text-align: center;
+  position: absolute;
+  color: white !important;
+  background: var(--blue);
+  padding: 1rem 4rem;
+  top: -1.7rem;
+  display: inline-block;
+  left: 5rem;
+}
+
+.mark--center {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.mark--inverted {
+  color: var(--blue) !important;
+  background-color: white;
+}
+
+.mark--sm {
+  padding: 1rem 1.2rem;
+  min-width: 12rem;
+}
+
+.mark--md {
+  padding: 1rem 2.5rem;
+  min-width: 14rem;
+}
+.mark--lg{
+  min-width: 20rem;
+}
+
+.mark--static {
+  position: static;
+  left: 0;
+  width: fit-content;
+}
+
+.card {
+  position: relative;
+  background-color: white;
+  z-index: 100;
+}
+
+.card:not([data-icon]) {
+  color: var(--blue);
+}
+
+.card__img {
+  width: 100%;
+}
+
+.card--wide {
+  padding: 7.6rem 6.4rem;
+  width: 54.4rem;
+}
+
+.card__content {
+  padding: 3.2rem;
+}
+
+.card--inverted {
+  background-color: var(--blue);
+  color: white;
+  padding: 5rem;
+}
+
+.sm-note {
+  color: var(--green);
+  margin-top: 2.8rem;
+  display: inline-block;
+}
+
+.tag {
+  color: white;
+  width: 9ch;
+  margin-bottom: 5rem;
+}
+
+
+
+
+/* ! Utils */
+/* Need to add more utils */
+.flex {
+  display: flex;
+}
+
+.flex-container {
+  position: relative;
+  display: flex;
+  gap: 5.5rem;
+  padding: 7rem 2rem;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  /* justify-content: space-between; */
+}
+
+.mt-40 {
+  margin-top: 4rem;
+  display: inline-block;
+}
+
+.text-md {
+  font-size: var(--fz-500);
+  font-family: var(--brand-text);
+  display: inline-block;
+  max-width: 39ch;
+  margin-bottom: 3rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: 1px;
+}
+
+.text-sm {
+  font-size: 2rem;
+  line-height: 1.3;
+  width: 65ch;
+}
+
+.bg-blue:not([data-icon]) {
+  background-color: var(--blue);
+  color: white;
+}
+
+.bg-green {
+  background-color: var(--green);
+}
+
+.bg-green * {
+  color: var(--blue);
+}
+
+.tag-reverse {
+  color: var(--blue);
+  font-size: var(--fz-600);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+}
+
+.grid-5 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 3rem;
+}
+
+
+/*! Header */
+.header-primary {
+  margin-bottom: 2rem;
+}
+
+.main-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border: 1px solid red;
+  align-items: center;
+  min-height: 12.8rem;
+}
+
+.main-header a:hover {
+  opacity: 0.85;
+}
+
+.main-header nav {
+  display: flex;
+}
+
+.main-header nav a {
+  font-size: var(--fz-100);
+}
+
+.main-header nav ul {
+  display: flex;
+  gap: 8rem;
+}
+
+/* !Hero section */
+.hero-section {
+  position: relative;
+  min-height: 60rem;
+  background-size: 100vw;
+}
+
+.hero-section img,
+.did-y-knw>img {
+  width: 100vw;
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.hero-section .card {
+  height: 41.6rem;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.take-action {
+  position: relative;
+}
+
+.point img {
+  color: #354463;
+}
+
+.point h2 {
+  margin: 1rem 0;
+}
+
+.point p {
+  width: 25ch;
+}
+
+
+/*! What we do */
+.wt-we-do__mark {
+  left: 0;
+  top: -8rem;
+}
+
+.wt-we-do .header-primary,
+.our-team .header-primary {
+  position: relative;
+}
+
+
+.btn--wide {
+  font-size: var(--fz-300);
+  padding: 1rem 2.5rem;
+}
+
+/* ! Did you know  */
+
+/* .did-y-knw {
+  position: relative;
+}
+
+.did-y-knw .content-container {
+  justify-content: space-between;
+  padding: 12.8rem 0;
+} */
+
+.text-container {
+  position: relative;
+}
+
+.did-y-knw .social {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: absolute;
+  right: 5rem;
+  top: 7rem;
+}
+
+/* .did-y-knw .card {
+  position: relative;
+  padding: 5rem;
+} */
+
+/* .did-y-knw .card p {
+  font-size: var(--fz-300);
+  font-family: var(--small-text);
+  width: 30ch;
+} */
+
+.social [data-icon] {
+  color: var(--green) !important;
+  display: flex;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: var(--blue);
+  border-radius: 20rem;
+}
+
+/* ! Stories */
+/* .cards-container {
+  display: flex;
+  align-items: center;
+}
+
+.stories .btn {
+  transform: translateY(5rem);
+}
+
+.right {
+  order: -1;
+  transform: translate(5rem);
+  width: max-content;
+  z-index: 100;
+}
+
+.right .text-md {
+  color: white;
+}
+
+.card--inverted p {
+  color: white;
+}
+
+.cards-container img {
+  width: 65rem;
+  object-fit: cover;
+
+}
+
+.img-cont {
+  position: relative;
+}
+
+.img-cont .overlay {
+  width: 100%;
+  z-index: 1;
+  height: calc(100% - 0.4rem);
+} */
+
+/* ! Event and last news */
+
+
+.card--fluid {
+  display: flex;
+  gap: 10rem;
+  align-items: center;
+}
+
+.card--fluid:first-of-type {
+  margin-bottom: 7rem;
+}
+
+.card--fluid .img-cont {
+  width: 50rem;
+}
+
+.card--fluid img {
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 6/6;
+}
+
+.card__text {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+  position: relative;
+}
+
+.card__head {
+  font-family: var(--brand-text);
+  font-size: var(--fz-600);
+  font-weight: 800;
+  margin-bottom: -2rem;
+  line-height: 1.2;
+  width: 15ch;
+}
+
+.card__p {
+  width: 35ch;
+}
+
+.event .mark {
+  top: -8rem;
+  left: 0;
+}
+
+.btn--inverted {
+  background-color: var(--blue);
+  color: var(--green) !important;
+}
