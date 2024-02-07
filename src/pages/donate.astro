@@ -157,12 +157,15 @@ import { Icon } from "astro-icon/components";
       ".chevron[data-icon='bi:caret-up-fill']"
     );
     const increaseNumber = () => {
-      var numberValue = +number.value;
+      var numberValue:number = +number.value;
       if (numberValue < 0) return;
       chevronDown.addEventListener("click", (e) => {
+        // @ts-ignore
         number.value = numberValue--;
       });
       chevronUp.addEventListener("click", (e) => {
+        // TODO
+        // @ts-ignore
         number.value = numberValue++;
       });
     };

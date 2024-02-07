@@ -105,7 +105,7 @@ const desscription2 =
   </div>
 </section>
 <script>
-  const tabs = document.querySelectorAll(".tab-group li");
+  const tabs  = document.querySelectorAll(".tab-group li");
   const dataChars = document.querySelectorAll("[data-char]");
   var charName = document.getElementById("char-name");
   tabs.forEach((tab, index) => {
@@ -121,7 +121,7 @@ const desscription2 =
       tab.classList.add("active");
       charName.innerHTML = tab.innerHTML;
       console.log(charName);
-      dataChars.forEach((dataChar) => {
+      dataChars.forEach((dataChar: HTMLElement) => {
         dataChar.style.display = "none";
         if (dataChar.id === tabDataFilter) {
           dataChar.style.display = "block";
@@ -133,11 +133,11 @@ const desscription2 =
     });
   });
   const nextBtn = document.getElementById("next-btn");
-  const nextStory = function (e) {
+  const nextStory = function () {
     const tabsArr = Array.from(tabs);
     const active = document.querySelector(".active");
    const activeIndex= tabsArr.indexOf(active);
-    // console.log(tabsArr.indexOf(active))
+    // @ts-ignore
     tabsArr[activeIndex + 1].click();
   };
   nextBtn.addEventListener("click", nextStory);
