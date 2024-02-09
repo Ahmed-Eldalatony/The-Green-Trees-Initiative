@@ -17,7 +17,7 @@
   --green: #c1f7d5;
   --inria: "Inria Sans", sans-serif;
   --flood: "flood-std", sans-serif;
-  --playfair: "playfair", serif;
+  --playfair: "Playfair", sans-serif;
 }
 
 * {
@@ -159,6 +159,7 @@ a {
 }
 
 .logo {
+  font-family: var(--playfair) !important;
   color: var(--blue);
   width: 15ch;
   display: block;
