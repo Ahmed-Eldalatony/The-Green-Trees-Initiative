@@ -144,7 +144,6 @@ a {
     margin-inline: auto;
   padding: 10rem 16rem;
   position: relative;
-  border: solid 5px red;
 }
 
 .container__p {
@@ -359,7 +358,6 @@ a {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  border: 1px solid red;
   align-items: center;
   min-height: 12.8rem;
 }
