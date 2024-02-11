@@ -1,6 +1,6 @@
-<section class="hero-section">
+<section class="hero-section container">
   <img class="cover-img" src="/images/Eating boy.png" alt="" />
-  <div class="container">
+  <div class="">
     <div class="content-container flex">
       <div class="card card--wide card--hero">
         <div class="mark inria-16">the issue</div>
@@ -21,8 +21,13 @@
 <style>
   .hero-section {
     position: relative;
+    border: 3px solid yellow;
   }
-
+img{
+position: absolute;
+right: 0rem;
+top: 0;
+}
   .hero-section .card {
     height: 41.6rem;
   }
@@ -33,10 +38,22 @@
   }
 
   /* Responsive */
-
+.hero-section {
+  margin-inline: auto;
+      /* width: 144rem; */
+    }
   @media (max-width: 1300px) {
     .content-container {
       gap: 5rem;
+    }
+.hero-section {
+      /* width: 110rem; */
+    }
+  }
+
+  @media (max-width: 1100px) {
+    .hero-section {
+      /* width: 110rem; */
     }
   }
   @media (max-width: 768px) {
@@ -55,9 +72,12 @@
   }
 
   @media (max-width: 576px) {
-.hero-section .mark {
+    .hero-section .mark {
       left: 50%;
       transform: translate(-50%);
     }
+  }
+  .cover-img.img {
+    /* width: 100vh !important; */
   }
 </style>

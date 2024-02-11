@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 ---
 
-<section class="did-y-knw">
+<section class="did-y-knw container">
   <Image
     class="cover-img"
     width="1400"
@@ -11,7 +11,7 @@ import { Icon } from "astro-icon/components";
     src="/images/child carry a baby.png"
     alt="child carry a baby.png"
   />
-  <div class="container">
+  <div class="">
     <div class="content-container flex">
       <div class="text-container">
         <p class="tag flod-72">Climate change is hunger issue.</p>
@@ -84,7 +84,11 @@ import { Icon } from "astro-icon/components";
   .text-container {
     position: relative;
   }
-
+img{
+  position: absolute;
+  right: 0;
+  top: 0;
+}
   .did-y-knw .social {
     display: flex;
     flex-direction: column;

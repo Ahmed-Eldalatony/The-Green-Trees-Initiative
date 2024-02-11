@@ -3,8 +3,8 @@ import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 ---
 
-<section class="bg-blue">
-  <div class="container">
+<section class="bg-blue container">
+  <div class="">
     <div class="flex-between">
       <h1 class="playfair-44">Latest Post</h1>
       <ul class="social-container">
@@ -26,7 +26,7 @@ import { Icon } from "astro-icon/components";
         </li>
       </ul>
     </div>
-    <div class="flex-between">
+    <div class="hero-post flex">
       <div class="card card--wide bg-green">
         <h2 class="playfair-36">
           This is the title for the latest blog post this long
@@ -49,9 +49,19 @@ import { Icon } from "astro-icon/components";
   </div>
 
   <style>
-    .img-card{
-      background-size: contain;
-      min-height: 43rem;
+    .hero-post {
+      height: 38rem;
+      gap: 4rem;
+    }
+    .card{
+      width: calc(50% - 2rem);
+      padding: 4.6rem;
+    }
+    .hero-post img{
+      object-fit: cover;
+      /* // TODO: yeah i think this */
+      width: calc(50% - 2rem);
+      height: 100%;
     }
     .social-container {
       display: flex;
@@ -66,13 +76,71 @@ import { Icon } from "astro-icon/components";
       display: flex;
       justify-content: space-between;
     }
-    
     .social-container{
       margin-bottom: 7rem;
     }
-    .grid-2{
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+
+   @media (max-width: 768px) {
+
+    .hero-post{
+      gap: 2rem;
     }
+.hero-post img{
+      object-fit: cover;
+      /* // TODO: yeah i think this */
+      width: calc(50% );
+    min-height: 100%;
+}
+    .card{
+      min-height: 100% ;
+      padding: 2rem;
+
+    }
+   .playfair-36{
+    font-size: var(--fz-500);
+    line-height: 28px;
+   } 
+   .inria-20{
+    font-size: var(--fz-200);
+   }
+   } 
+
+   @media (max-width: 576px) {
+    .flex-between{
+      flex-direction: column;
+    }
+    .social-container{
+      margin-bottom: 2rem;
+    }
+    .playfair-44{
+      font-size: var(--fz-800);
+      order: 1;
+      margin-bottom: 1rem;
+    }
+    .card{
+      width: 100%;
+      text-align: start;
+      min-height:fit-content;
+    }
+    img{
+      width: 100% !important;
+      min-height: 30rem !important;
+      max-height: 30rem !important;
+    }
+    .hero-post{
+      min-height: 60rem;
+      flex-direction: column;
+    }
+   }
+
+   @media (max-width: 376px) {
+    
+    .social-container {
+      flex-wrap: wrap;
+    }
+    .social-container .inria-16{
+      width: 100vw;
+    }
+   }
   </style>
 </section>

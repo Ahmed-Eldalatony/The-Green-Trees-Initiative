@@ -1,7 +1,7 @@
   @media (max-width: 1300px) {
       .container {
-          width: 110rem;
-          padding-inline: 3rem;
+        width: 110rem;
+            padding-inline: 3rem;
       }
 
       .point p {
@@ -53,26 +53,21 @@
 
   @media (max-width: 1100px) {
       .container {
-          width: 80rem;
-          padding-left: 2rem;
-          padding-right: 2rem;
+        /* width: 80rem; */
+            padding-left: 2rem;
+            padding-right: 2rem;
       }
 
       .flod-72 {
           font-size: var(--fz-800);
       }
 
-      .grid-4 {
-          width: 80rem;
+          .grid-4 {
           grid-template-columns: repeat(2, 1fr);
       }
 
       .point p {
           width: 30ch;
-      }
-
-      .playfair-28 {
-          font-size: var(--fz-600);
       }
 
       /*! Stories */
@@ -94,12 +89,12 @@
       }
 
       .container {
-          padding: 5rem 2rem;
+        padding: 5rem 2rem;
           width: 60rem;
       }
 
       .grid-4 {
-          width: 60rem;
+        /* width: 60rem; */
       }
 
       .point p {
@@ -182,7 +177,7 @@
   @media (max-width: 576px) {
       .container {
           width: 98%;
-          padding: 3rem 1rem;
+        padding: 3rem 1rem;
       }
 
       .mark {
@@ -276,10 +271,7 @@
           position: relative;
       }
 
-      .img-cont .mark {
-          /* top: -250px; */
-          /* left: 60px; */
-      }
+    
   }
 
   @media (max-width: 376px) {

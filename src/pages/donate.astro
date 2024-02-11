@@ -5,14 +5,16 @@ import { Icon } from "astro-icon/components";
 ---
 
 <LayoutSimple title="Donate">
-  <section class="hero-section flex-between">
+  <section class="hero-section container ">
     <Image
+    class="bg-cover"
       src="/images/Eating boy.png"
       width={1000}
       height={1000}
       alt=""
     />
-    <div class="flex-between container">
+    <div class="flex-between body">
+      <div class="tag-md flod-44"> We can save the future  </div>
       <div class="card bg-blue">
         <p class="playfair-28">Choose a donation amount</p>
         <div class="checklist monthly checklist-vertical">
@@ -27,7 +29,9 @@ import { Icon } from "astro-icon/components";
                 checked
               />
               <span class="selected-bg"></span>
-              <span class="radio-custom"></span>
+              <span class="radio-custom">
+
+              </span>
               <span class="checkmark"></span>
               <span class="playfair-60"> 10$</span>
               <p class="inria-16">
@@ -175,6 +179,22 @@ import { Icon } from "astro-icon/components";
     increaseNumber();
   </script>
   <style>
+.bg-cover{
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    
+    .flex-between{
+      justify-content: space-between;
+    }
+   .playfair-60{
+    font-family: "Playfair ", serif; 
+   } 
+   .hero-section{
+    justify-content: space-between;
+    /* background-color: red; */
+   }
 .card {
       width: 60rem;
       padding: 6.5rem;
@@ -205,7 +225,7 @@ import { Icon } from "astro-icon/components";
     }
 
     .radio-container * {
-      transition: all 0.3s ease;
+      transition: all .3s ease;
     }
     .checklist-vertical .checkmark {
       animation: goDown 0.3s;
@@ -255,6 +275,7 @@ import { Icon } from "astro-icon/components";
       padding: 2.4rem;
       padding-left: 8.2rem;
       background-color: white;
+      margin-right: -.1rem;
     }
     .radio-container .inria-16 {
       color: var(--blue);
@@ -296,6 +317,7 @@ import { Icon } from "astro-icon/components";
       display: block;
       background-color: white;
       color: var(--blue);
+
     }
     .radio:checked ~ .playfair-22 {
       color: white;
@@ -389,7 +411,54 @@ import { Icon } from "astro-icon/components";
         transform: translateX(0px);
       }
     }
+.tag-md{
+display: none;
+      }
+    @media (max-width: 768px) {
+      .tag{
+        display: none;
+      }
+      .tag-md{
+display: block;
+text-align: center;
+width: 100%;
+color: white;
+      }
+      .flex-between.body{
+        flex-direction: column;
+        gap: 3.6rem;
+      }
+      .card{
+        max-width: 100% !important;
+      }
+    .checklist-horizontal .playfair-22 {
+padding-right: 3rem;
+}
+.radio-container .flex-between {
+  flex-direction: column;
+}
 
+.radio-container .flex-between .playfair-60  {
+  width: 100%;
+margin-bottom: -.1rem;
+padding-right: 8rem;
+  padding-bottom: 0rem;
+    }
+
+
+    }
+    @media (max-width: 768px) {
+.card{
+  padding: 1.6rem;
+}
+.checklist-horizontal{
+  flex-direction: column;
+}
+    .checklist-horizontal label {
+      min-width: 100%;
+}
+    }
+    
     /*  TODO: movable selected background */
     /* .selected-bg{
       background-color:red;

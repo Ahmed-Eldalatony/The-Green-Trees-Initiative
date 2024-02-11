@@ -4,7 +4,7 @@ import { Image } from "astro:assets";
 
 <section>
   <div class="container">
-    <div class="flex-between all-entries">
+    <div class="all-entries">
       <h2 class="playfair-44">ALL ENTRIES</h2>
       <div class="tab-group-container">
         <ul class="tab-group inria-16">
@@ -179,6 +179,10 @@ import { Image } from "astro:assets";
   import "../../scripts/tabsForEntries"
 </script>
 <style>
+  .all-entries {
+    display: flex;
+    justify-content: space-between;
+  }
   .tab-group {
     width: fit-content;
     display: flex;
@@ -209,6 +213,7 @@ import { Image } from "astro:assets";
     border-radius: 10rem;
     position: relative;
     z-index: 200;
+    font-size: 1.8rem;
   }
   .tab-group li:hover {
     opacity: 0.8;
@@ -223,6 +228,7 @@ import { Image } from "astro:assets";
     right: 0;
   }
   .tab-container {
+    --move-value:6;
     position: absolute;
     top: 8px;
     left: calc(var(--move) + 8px);
@@ -269,12 +275,104 @@ import { Image } from "astro:assets";
     margin-top: 1rem;
     margin-bottom: 2.2rem;
   }
-  .card--event img {
+  .card img {
     object-fit: cover;
     object-position: top;
   }
 
   .card--event .mark {
     top: 19.5rem;
+  }
+  
+  @media (max-width: 1300px) {
+
+  .grid-bento {
+    gap: 2.4rem;
+   grid-template-columns:repeat(11, 1fr) ; 
+  }
+  .grid-bento .card{
+    grid-column: span 3 !important;
+  }
+  .grid-bento .card--event{
+    grid-column: span 5 !important;
+  }
+  }
+
+  @media (max-width: 768px) {
+    .all-entries{
+      flex-direction: column;
+    }
+    
+    .tab-group-container{
+      margin: 2rem 0 -4rem auto;
+    }
+.grid-bento {
+    gap: 2.4rem;
+   grid-template-columns:repeat(2, 1fr) ; 
+  }
+.grid-bento .card{
+  min-width: 100%;
+    grid-column: span 1 !important;
+  }
+.grid-bento .card--event{
+    grid-column: span 2 !important;
+  }
+  
+  }
+
+  @media (max-width: 576px) {
+    .mark{
+      transform: translateX(0);
+    }
+    .grid-bento{
+      gap: 1.5rem;
+    }
+.grid-bento .card__content{
+  padding: 2.8rem 1rem;
+}
+
+
+.grid-bento .card__content .playfair-36{
+  font-size: var(--fz-500);
+  line-height: 30px;
+  padding-right: 1rem;
+}
+.grid-bento .card__content .playfair-22{
+  font-size: var(--fz-300);
+  line-height: 22px;
+}
+    .tab-group li{
+      min-width: 8rem;
+      font-size: var(--fz-200);
+    }
+    .tab-container{
+    --move-value:4.6;
+      min-width: 8rem;
+    }
+.card--event .mark {
+    top: 16rem;
+  }
+
+  .grid-bento .card:nth-child(7),
+  .grid-bento .card:nth-child(8),
+  .grid-bento .card:nth-child(9)
+  {
+    display: none;
+  }
+  }
+
+  @media (max-width: 376px) {
+    .grid-bento{
+      grid-template-columns: 1fr;
+    }
+
+    .grid-bento .card{
+      height: fit-content !important;
+      margin-bottom: ;
+    }
+    .grid-bento .card--event{
+      grid-column: span 1 !important;
+    }
+
   }
 </style>

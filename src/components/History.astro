@@ -3,14 +3,14 @@ import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 ---
 
-<section class="bg-blue">
-  <div class="container">
+<section class="bg-blue container">
+  <div class="">
     <h2 class="flod-72">TAKE A LOOK BACK AT WHERE WE’VE BEEN</h2>
 
     <Icon class="arrow arrow--right" name="bi:arrow-right" />
     <Icon class="arrow arrow--left" name="bi:arrow-left" />
   </div>
-  <div class="scroll container container__p">
+  <div class="scroll ">
     <div class="flex carousel">
       <div class="card">
         <div class="mark mark--inverted">2016</div>
@@ -23,7 +23,7 @@ import { Icon } from "astro-icon/components";
           alt="Image of people suffering"
         />
         <div class="card__content">
-          <h3 class="card__head">
+          <h3 class="playfair-36">
             Training to rural women and community-based organizations
           </h3>
           <p class="card__p inria-16">
@@ -43,7 +43,7 @@ import { Icon } from "astro-icon/components";
           alt="Image of people suffering"
         />
         <div class="card__content">
-          <h3 class="card__head">
+          <h3 class="playfair-36">
             Training to rural women and community-based organizations
           </h3>
           <p class="card__p inria-16">
@@ -63,7 +63,7 @@ import { Icon } from "astro-icon/components";
           alt="Image of people suffering"
         />
         <div class="card__content">
-          <h3 class="card__head">
+          <h3 class=" playfair-36">
             Training to rural women and community-based organizations
           </h3>
           <p class="card__p inria-16">
@@ -79,16 +79,18 @@ import { Icon } from "astro-icon/components";
       const arrowRight: HTMLElement = document.querySelector(".arrow--right");
       const arrowLeft: HTMLElement = document.querySelector(".arrow--left");
       const carousel: HTMLElement = document.querySelector(".carousel");
+      // get dynamic css value 
+      const move = getComputedStyle(carousel).getPropertyValue("--move");
       // ! I didi that because iam lazy but this isn't the best approach but it's just two states
       arrows.forEach((arrow) => {
         arrow.addEventListener("click", (e) => {
           if (e.target === arrowRight) {
-            carousel.style.transform = "translateX(-500px)";
+            carousel.style.transform = `translateX(-${move})`;
           }
           if (e.target === arrowLeft) {
             carousel.style.transform = "translateX(0px)";
           }
-          if (carousel.style.transform === "translateX(-500px)") {
+          if (carousel.style.transform === `translateX(-${move})`) {
             arrowRight.style.opacity = "0";
             arrowLeft.style.opacity = "1";
           }
@@ -114,7 +116,12 @@ import { Icon } from "astro-icon/components";
       .card * {
         color: var(--blue);
       }
+      .card img{
+        object-fit: cover;
+      }
       .carousel {
+        --move:650px;
+        margin-top: 8rem;
         display: flex;
         gap: 3.2rem;
         transition: transform 0.3s ease-in-out;
@@ -128,7 +135,7 @@ import { Icon } from "astro-icon/components";
         padding: 1rem;
         color: var(--blue);
         width: 6.4rem;
-        min-height: 6.4rem;
+        height: 6.4rem;
         border-radius: 10rem;
         position: absolute;
         cursor: pointer;
@@ -158,7 +165,87 @@ import { Icon } from "astro-icon/components";
       .mark {
         z-index: 100;
       }
-      .container__p {
+      /* .container__p {
         padding: 2rem 12rem 12rem 12rem;
+      } */
+@media (max-width: 1100px){
+.flod-72 {
+    font-size: var(--fz-900);
+}
+
+}
+
+@media (max-width:768px){
+  .carousel{
+    --move:570px
+  }
+.flod-72 {
+    font-size: var(--fz-800);
+}
+
+      .arrow {
+        top: 16rem;
+        width: 5rem;
+        height: 5rem;
       }
+.arrow--right {
+        right: 4rem;
+      }
+      .arrow--left {
+        right: 14rem;
+      }
+.carousel .card{
+  width: 35rem;
+}
+.card__content{
+  padding-left: 4rem;
+}
+.card .playfair-36{
+  font-size: var(--fz-500);
+  line-height: 27px;
+}
+}
+@media (max-width: 576px) {
+
+.flod-72{
+  font-size: var(--fz-600);
+}
+.carousel{
+  --move:100vw;
+}
+.card{
+  min-width: 100%;
+}
+.carousel .card:last-child{
+ display: none !important; 
+}
+  }
+
+@media (max-width: 376px) {
+.arrow {
+  width: 3.6rem;
+  height: 3.6rem;
+  font-size: 3rem;
+        top: 12rem;
+      }
+.carousel{
+  gap: 1rem;
+}
+.card__content{
+  padding: 2rem;
+  width: 88vw;
+}
+
+.card__content p{
+
+  width: 20rem;
+}
+.card .playfair-36{
+  font-size: var(--fz-400);
+  width: 100%;
+}
+.flod-72{
+  font-size: var(--fz-400);
+}
+}
     </style>

@@ -15,7 +15,7 @@ import { Image } from "astro:assets";
     </div>
     <div class="right">
       <div class="card--inverted">
-        <q class="text-md"
+        <q class=" playfair-28"
           >I am a person who was helped by this organization. Before they gave
           me assistance, I was really struggling with this issue, but now my
           life is better.
@@ -43,14 +43,6 @@ import { Image } from "astro:assets";
     z-index: 100;
   }
 
-  .right .text-md {
-    color: white;
-  }
-
-  .card--inverted p {
-    color: white;
-  }
-
   .cards-container img {
     width: 65rem;
     object-fit: cover;
@@ -63,13 +55,6 @@ import { Image } from "astro:assets";
   @media (max-width: 1100px) {
     .cards-container {
       margin-left: -5rem;
-    }
-    .stories .card--inverted .text-md {
-      font-size: var(--fz-300);
-    }
-
-    .stories .right {
-      /* transform: translate(5rem, 2rem); */
     }
 
     .stories .right .card--inverted {

@@ -2,8 +2,8 @@
 import { Image } from "astro:assets";
 ---
 
-<section class="our-team">
-  <div class="container">
+<section class="our-team container">
+  <div class="">
     <div class="text-container">
       <h2 class="header-primary playfair-44">
         Meet the team of people making it happen.
@@ -96,9 +96,16 @@ import { Image } from "astro:assets";
 <style>
   .text-container {
     display: flex;
+    gap: 5rem;
   }
+ .header-primary {
+   width: 34ch;
+ } 
+ .text-sm{
+  width: fit-content;
+ }
   .our-team {
-    padding-top: 10rem;
+    padding-top: 16rem;
   }
   .card {
     width: 32rem;
@@ -118,6 +125,15 @@ import { Image } from "astro:assets";
   .text-sm {
     color: var(--blue);
   }
+.card img{
+  object-fit: cover;
+}
+  @media (max-width: 1300px) {
+    .card{
+      width: 29rem;
+    }
+  }
+
   @media (max-width: 1100px) {
     .our-team .grid-3 {
       padding-top: 7rem;
@@ -126,6 +142,12 @@ import { Image } from "astro:assets";
     .grid-3 .card {
       width: 30rem;
     }
+.playfair-44{
+  font-size: var(--fz-600);
+}
+.inria-20{
+  font-size: var(--fz-200);
+}
   }
   @media (max-width: 768px) {
     .grid-3 .card {
@@ -155,5 +177,14 @@ import { Image } from "astro:assets";
     .our-team .grid-3 {
       padding-bottom: 7rem;
     }
+.text-container {
+    gap: 1rem;
+  }
+  .playfair-44{
+    font-size: var(--fz-500);
+  }
+  .inria-20{
+    font-size: var(--fz-100);
+  }
   }
 </style>

@@ -2,8 +2,8 @@
 import { Image } from "astro:assets";
 ---
 
-<section class="our-impact">
-  <div class="container">
+<section class="our-impact container">
+  <div class="">
     <Image
       width="1000"
       height="1000"
@@ -52,8 +52,7 @@ import { Image } from "astro:assets";
     object-fit: cover;
   }
   .grid-4 {
-    gap: 7rem;
-    padding-inline: 16rem;
+    gap: 5rem;
   }
   .header-primary {
     width: 30ch;
@@ -90,16 +89,54 @@ import { Image } from "astro:assets";
       border: 2px solid red;
     }
     .grid-4 {
-      gap: 4rem;
+      gap: 1.6rem;
     }
     .bg-cover {
       min-height: 65rem;
     }
-  }
-
-  @media (max-width: 1300px) {
-    .bg-cover {
+.bg-cover {
       min-height: 80rem;
     }
   }
+
+  @media (max-width: 1100px) {
+    .grid-4{
+padding-inline: 6rem;
+row-gap: 5rem;
+    }
+  }
+  .container{
+    background-color: red;
+  }
+
+  @media (max-width: 768px) {
+
+  .our-impact__content{
+    max-width: 100%;
+  }
+.header-primary{
+  width: 100%;
+  padding-inline: 2rem;
+}
+.grid-4{
+  max-width: 100%;
+  padding-inline: 1rem;
+}
+.mark{
+  transform: translateX(0);
+}
+  }
+
+  @media (max-width: 576px) {
+    .bg-cover{
+      min-height: 100rem;
+    }
+    .grid-4{
+      grid-template-columns: repeat(1, 1fr);
+    }
+    .our-impact__content{
+      top: 8rem;
+    }
+  }
+  
 </style>

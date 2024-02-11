@@ -1,7 +1,8 @@
 :root {
   font-size: 62.5%;
-  --fz-80: 1.1rem;
   --move: 0;
+    --move-value: 0;
+  --fz-80: 1.1rem;
   --fz-100: 1.4rem;
   --fz-200: 1.6rem;
   --fz-300: 1.8rem;
@@ -31,8 +32,7 @@
 
 body {
   font-size: 1.6rem;
-  font-family: var(--small-text);
-  background-color: white;
+  font-family: var(--inria);
 }
 
 
@@ -90,7 +90,7 @@ a {
 .playfair-22 {
   font-family: var(--playfair);
   font-size: var(--fz-400);
-  font-weight: 600;
+    font-weight: 900;
   line-height: 28px;
   letter-spacing: 1px;
 }
@@ -140,10 +140,11 @@ a {
 /* !Components */
 .container {
   width: 144rem;
-  margin: 0 auto;
+  /* margin: 0 auto; */
+    margin-inline: auto;
   padding: 10rem 16rem;
   position: relative;
-  border: solid 1px green;
+  border: solid 5px red;
 }
 
 .container__p {
@@ -160,8 +161,10 @@ a {
 
 .logo {
   font-family: var(--playfair) !important;
+  font-size: 2.4rem;
+    font-weight: 900;
   color: var(--blue);
-  width: 15ch;
+  width: 12ch;
   display: block;
 }
 
@@ -382,12 +385,12 @@ a {
 .hero-section {
   position: relative;
   min-height: 60rem;
-  background-size: 100vw;
+  /* background-size: 100vw; */
 }
 
 .hero-section img,
 .did-y-knw>img {
-  width: 100vw;
+  min-width: 100%;
   position: absolute;
   z-index: 1;
   height: 100%;
@@ -439,16 +442,10 @@ a {
 }
 
 /* ! Did you know  */
-
-/* .did-y-knw {
-  position: relative;
+.btn {
+  font-family: var(--playfair);
+  font-weight: 900;
 }
-
-.did-y-knw .content-container {
-  justify-content: space-between;
-  padding: 12.8rem 0;
-} */
-
 .text-container {
   position: relative;
 }

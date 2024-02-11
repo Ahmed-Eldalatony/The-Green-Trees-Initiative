@@ -6,9 +6,9 @@ const desscription2 =
   " Aliquam pellentesque nulla congue aliquam viverra. Ut cursus sollicitudin metus nec tristique. Sed eget elementum quam, non mollis orci. Aliquam dignissim, augue ac pretium suscipit, eros enim fermentum ante, et congue lectus metus nec dui. Nunc et ipsum aliquam, sodales mi eu, varius odio. Proin porta nulla nec ex blandit, nec ornare lorem ullamcorper.";
 ---
 
-<section class="work-stories bg-blue">
-  <div class="container">
-    <div class="flex-between">
+<section class="work-stories container bg-blue">
+  <div class="">
+    <div class="page-container">
       <div>
         <h1 class="playfair-44">stories of our work</h1>
         <div>
@@ -76,7 +76,7 @@ const desscription2 =
         />
       </div>
     </div>
-    <div class="flex-between mt-40">
+    <div class="info-container mt-40">
       <div>
         <div class="card card--wide">
           <q class="playfair-28">
@@ -97,8 +97,12 @@ const desscription2 =
 
       <div>
         <h1 class="playfair-44" id="char-name">ClAUDINE, NIGERIA</h1>
+        <div class="text-container">
+
         <p class="inria-20">{desscription1}</p>
         <p class="inria-20">{desscription2}</p>
+
+        </div>
         <button id="next-btn" class="btn btn--wide">Next Story</button>
       </div>
     </div>
@@ -106,15 +110,19 @@ const desscription2 =
 </section>
 <script>
   const tabs  = document.querySelectorAll(".tab-group li");
+  const tabContainer  = document.querySelector(".tab-container ");
   const dataChars = document.querySelectorAll("[data-char]");
   var charName = document.getElementById("char-name");
   tabs.forEach((tab, index) => {
     tab.addEventListener("click", (e) => {
       const tabDataFilter = tab.getAttribute("data-filter");
+      const moveValue = getComputedStyle(tabContainer).getPropertyValue("--move-value");
+      console.log("move",moveValue)
+
       // console.log(
       document.documentElement.style.setProperty(
         "--move",
-        +index * 5 + "rem"
+        +index * +moveValue + "rem"
         //   )
       );
       tabs.forEach((tab) => tab.classList.remove("active"));
@@ -143,6 +151,9 @@ const desscription2 =
   nextBtn.addEventListener("click", nextStory);
 </script>
 <style>
+  .card--img{
+    margin-top: 6.4rem;
+  }
   [data-char] {
     display: none;
   }
@@ -164,7 +175,8 @@ const desscription2 =
     margin-bottom: 3.2rem;
     width: 100%;
   }
-  .flex-between {
+  .page-container {
+    display: flex;
     gap: 6rem;
   }
   .active {
@@ -181,7 +193,6 @@ const desscription2 =
     color: rgb(255, 255, 255);
     padding-right: 1.6rem;
     position: relative;
-    border-radius: 10rem;
     cursor: pointer;
   }
   .tab-group li {
@@ -192,6 +203,7 @@ const desscription2 =
     z-index: 100;
   }
   .tab-container {
+    --move-value:5;
     position: absolute;
     top: var(--move);
     animation: move 0.3s ease;
@@ -216,7 +228,67 @@ const desscription2 =
       opacity: 1;
     }
   }
-  .card--img {
-    margin-top: 6.4rem;
+  [data-char] img {
+    height: 100%;
+    object-fit: cover;
+  }
+  .info-container {
+    display: flex;
+    gap: 6.4rem;
+  }
+  @media (max-width: 768px) {
+    .tab-group{
+      min-width: 17rem;
+      gap: 0.6rem;
+    }
+    .inria-16 {
+      font-size: var(--fz-100) !important;
+    }
+.tab-group li {
+    padding: 0.8rem 1.2rem;
+  }
+  [data-char]img{
+    margin-top: 14rem;
+    width: 100%;
+    height:27rem !important;
+  }
+  .tab-container{
+    --move-value:4.6;
+  }
+.page-container {
+    gap: 2rem;
+  }
+  .info-container{
+    flex-direction: column;
+  }
+  
+}
+
+  @media (max-width: 576px) {
+    
+    .page-container{
+      flex-direction: column;
+    }
+    .card--wide{
+      text-align: start;
+    min-width: 100%;
+    padding: 2rem;
+    }
+   [data-char] img{
+      height: auto;
+      margin-top: 1.6rem;
+    }
+    .card--img img{
+      width: 100%;
+      height: 100% !important;
+      object-fit: cover;
+    }
+  }
+
+  @media (max-width: 376px) {
+    .card--wide .playfair-28 {
+      font-size: var(--fz-300);
+      line-height: 25px;
+    } 
   }
 </style>
