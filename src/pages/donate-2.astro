@@ -130,6 +130,7 @@ import { Image } from "astro:assets";
    inputsArray.forEach((input:HTMLInputElement) => {
     input.addEventListener('change',()=>{
   if (input.value!== "") {
+    //@ts-ignore
 input.nextElementSibling.style.top="10px"
   }
     })
