@@ -35,11 +35,9 @@ body {
   font-family: var(--inria);
 }
 
-
 a {
   color: var(--blue);
 }
-
 
 /*!  Font System */
 .flod-72 {
@@ -266,9 +264,6 @@ a {
   margin-bottom: 5rem;
 }
 
-
-
-
 /* ! Utils */
 /* Need to add more utils */
 .flex {
@@ -285,7 +280,6 @@ a {
 
 .flex-between {
   display: flex;
-  /* justify-content: space-between; */
 }
 
 .mt-40 {
@@ -457,16 +451,6 @@ a {
   top: 7rem;
 }
 
-/* .did-y-knw .card {
-  position: relative;
-  padding: 5rem;
-} */
-
-/* .did-y-knw .card p {
-  font-size: var(--fz-300);
-  font-family: var(--small-text);
-  width: 30ch;
-} */
 
 .social [data-icon] {
   color: var(--green) !important;
@@ -479,45 +463,6 @@ a {
 }
 
 /* ! Stories */
-/* .cards-container {
-  display: flex;
-  align-items: center;
-}
-
-.stories .btn {
-  transform: translateY(5rem);
-}
-
-.right {
-  order: -1;
-  transform: translate(5rem);
-  width: max-content;
-  z-index: 100;
-}
-
-.right .text-md {
-  color: white;
-}
-
-.card--inverted p {
-  color: white;
-}
-
-.cards-container img {
-  width: 65rem;
-  object-fit: cover;
-
-}
-
-.img-cont {
-  position: relative;
-}
-
-.img-cont .overlay {
-  width: 100%;
-  z-index: 1;
-  height: calc(100% - 0.4rem);
-} */
 
 /* ! Event and last news */
 

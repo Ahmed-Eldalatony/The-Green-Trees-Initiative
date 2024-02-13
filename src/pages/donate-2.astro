@@ -1,19 +1,20 @@
 ---
 import LayoutSimple from "../layouts/LayoutSimple.astro";
 import { Image } from "astro:assets";
-import { Icon } from "astro-icon/components";
 ---
 
 <section>
   <LayoutSimple title="Donate">
-    <section class="hero-section flex-between">
+    <section class="hero-section container ">
       <Image
+      class="bg-cover"
         src="/images/Eating boy.png"
         width={1000}
         height={1000}
         alt=""
       />
-      <div class="container flex-between">
+      <div class="content-container flex-between">
+      <div class="tag-md flod-44"> Give HOPE to those Who need It most </div>
         <div class="card card--wide bg-blue">
           <div class="playfair-28">Your infromation</div>
           <form class="grid-4">
@@ -205,6 +206,69 @@ import { Icon } from "astro-icon/components";
     .flex--center {
       margin-top: 6.4rem;
     }
-   
+.tag-md{
+display: none;
+}
+ .bg-cover{
+  top: 0;
+  left: 0;
+ }
+ 
+ .flex-between{
+  justify-content: space-between;
+ }
+      .tag-md{
+display: none;
+text-align: center;
+width: 100%;
+color: white;
+margin-bottom: 3rem;
+      }
+ 
+ @media (max-width: 1100px) {
+  .grid-4{
+    grid-template-columns: repeat(4,1fr);
+  }
+ }
+
+ @media (max-width: 768px) {
+ .content-container.flex-between{
+  flex-direction: column;
+ }
+ .card{
+  max-width: 100%;
+ }
+.tag-md{
+display: block;
+}
+.tag{
+display: none;
+} 
+ }
+
+ @media (max-width: 576px) {
+.card{
+  text-align: start;
+  padding: 2rem;
+  min-height: fit-content;
+} 
+.grid-4{
+  grid-template-columns: repeat(4,1fr);
+}
+ }
+
+ @media (max-width: 376px) {
+  .card .flex-between{
+    flex-direction: column;
+    gap: 3rem;
+  }
+.sm-note{
+  order: 2;
+  /* text-align: center; */
+}
+  .card .btn{
+    min-width: 100%;
+    text-align: center;
+  } 
+ }
   </style>
-</section>

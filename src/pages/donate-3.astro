@@ -5,14 +5,15 @@ import { Icon } from "astro-icon/components";
 ---
 
 <Layout title="Thanks for your donation">
-  <section class="hero-section flex-between">
+  <section class="hero-section container ">
     <Image
       src="/images/babies.jpg"
+      class="bg-cover"
       width={1000}
       height={1000}
       alt=""
     />
-    <div class="flex-between container">
+    <div class="flex-between content-container ">
       <p class="playfair-44">
         Thank you. Your donation helps support families in need and fights
         climate change.
@@ -25,11 +26,11 @@ import { Icon } from "astro-icon/components";
         </q>
         <div class="share-with ">
           <button class="share-btn btn btn--wide inria-16">
-            <Icon name="entypo-social:twitter" color="#3b5998" />
+            <Icon name="entypo-social:twitter"  />
             <span> Twitter</span>
           </button>
           <button class="share-btn btn btn--wide inria-16">
-            <Icon name="entypo-social:facebook" color="#3b5998" />
+            <Icon name="entypo-social:facebook"  />
             <span> Facebook</span>
           </button>
           <button class="share-btn btn btn--wide inria-16">
@@ -55,16 +56,17 @@ import { Icon } from "astro-icon/components";
   }
   .share-with {
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    display: grid;
+    grid-template-rows: repeat(4,1fr);
+    gap: 1.6rem;
+    
   }
   .share-btn {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     gap: 1rem;
     text-transform: uppercase;
+    min-width: 100%;
   }
   svg {
     width: 1.6rem;
@@ -72,4 +74,58 @@ import { Icon } from "astro-icon/components";
   .contact{
     display: none;
   }
+  .flex-between{
+    justify-content: space-between;
+  }
+  .bg-cover{
+    top:0;
+    left:0;
+  }
+@media (max-width:1100px) {
+  .content-container.flex-between{
+    flex-direction: column;
+  }
+
+.playfair-44{
+  width: 80%;
+  margin-bottom: 5rem;
+}
+.card--wide.flex-between{
+  flex-direction: column;
+  width: 100%;
+  height: fit-content;
+} 
+
+ .card.card--wide .playfair-28{
+  min-width: 100%;
+} 
+.card .share-with{
+  grid-template-columns: repeat(2,1fr);
+  grid-template-rows: repeat(2,1fr);
+  margin-top: 5rem;
+}
+.share-btn{
+  max-height: 5rem;
+}
+}
+
+@media (max-width:768px) {
+  .card{
+    padding: 3rem;
+  }
+.card .share-with{
+  gap: 1rem;
+}
+
+}
+
+@media (max-width:376px) {
+.card .share-with{
+  grid-template-columns: repeat(1,1fr);
+}
+
+.playfair-44{
+  width: 100%;
+}
+}
 </style>
