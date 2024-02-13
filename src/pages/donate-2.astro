@@ -109,6 +109,7 @@ import { Image } from "astro:assets";
 
               <label class="inria-16" for="first-name">security code</label>
             </div>
+            <!-- TODO: A better approach will be removing the element below to the form too and handling a submit with js . but i mean it's just a static page soooo😪 -->
           </form>
 
           <p class="playfair-28">
@@ -123,6 +124,18 @@ import { Image } from "astro:assets";
       </div>
     </section>
   </LayoutSimple>
+  <script>
+    const inputs:HTMLCollection= document.getElementsByTagName("input")
+    const inputsArray= Array.from(inputs)
+   inputsArray.forEach((input:HTMLInputElement) => {
+    input.addEventListener('change',()=>{
+  if (input.value!== "") {
+input.nextElementSibling.style.top="10px"
+  }
+    })
+   }); 
+  </script>
+
   <style>
     .sm-note {
       margin-top: 1rem;
