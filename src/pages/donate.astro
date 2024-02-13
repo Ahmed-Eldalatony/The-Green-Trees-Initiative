@@ -5,16 +5,16 @@ import { Icon } from "astro-icon/components";
 ---
 
 <LayoutSimple title="Donate">
-  <section class="hero-section container ">
+  <section class="hero-section container">
     <Image
-    class="bg-cover"
+      class="bg-cover"
       src="/images/Eating boy.png"
       width={1000}
       height={1000}
       alt=""
     />
     <div class="flex-between body">
-      <div class="tag-md flod-44"> We can save the future  </div>
+      <div class="tag-md flod-44">We can save the future</div>
       <div class="card bg-blue">
         <p class="playfair-28">Choose a donation amount</p>
         <div class="checklist monthly checklist-vertical">
@@ -29,9 +29,7 @@ import { Icon } from "astro-icon/components";
                 checked
               />
               <span class="selected-bg"></span>
-              <span class="radio-custom">
-
-              </span>
+              <span class="radio-custom"> </span>
               <span class="checkmark"></span>
               <span class="playfair-60"> 10$</span>
               <p class="inria-16">
@@ -86,7 +84,7 @@ import { Icon } from "astro-icon/components";
             type="number"
             class="playfair-60 donattion-number"
           />
-          <Icon class="chevron" color="#c1f7d5"  name="bi:caret-down-fill" />
+          <Icon class="chevron" color="#c1f7d5" name="bi:caret-down-fill" />
         </div>
         <span class="inria-16 sm-note">Enter a custom donation amount</span>
 
@@ -130,333 +128,328 @@ import { Icon } from "astro-icon/components";
           <a href="/donate-2" class="btn btn--wide">Go to checkout</a>
         </div>
       </div>
-    <p class="flod-72 tag">We can save the future</p>
+      <p class="flod-72 tag">We can save the future</p>
     </div>
   </section>
-  <script>
-    const tabs = document.querySelectorAll(".checklist-horizontal input");
-    const oneTime: HTMLElement = document.querySelector(".one-time");
-    const monthly: HTMLElement = document.querySelector(".monthly");
+</LayoutSimple>
+<script>
+  const tabs = document.querySelectorAll(".checklist-horizontal input");
+  const oneTime: HTMLElement = document.querySelector(".one-time");
+  const monthly: HTMLElement = document.querySelector(".monthly");
 
-    tabs.forEach((tab) => {
-      tab.addEventListener("click", (e) => {
-        const tabValue = tab.getAttribute("value");
-        if (tabValue === "one-time") {
-          oneTime.style.display = "block";
-          monthly.style.display = "none";
-        }
-        if (tabValue === "monthly") {
-          monthly.style.display = "block";
-          oneTime.style.display = "none";
-        }
-      });
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", (e) => {
+      const tabValue = tab.getAttribute("value");
+      if (tabValue === "one-time") {
+        oneTime.style.display = "block";
+        monthly.style.display = "none";
+      }
+      if (tabValue === "monthly") {
+        monthly.style.display = "block";
+        oneTime.style.display = "none";
+      }
     });
+  });
 
-    const number: HTMLInputElement | null =
-      document.querySelector(".donattion-number");
-    const chevronDown = document.querySelector(
-      ".chevron[data-icon='bi:caret-down-fill']"
-    );
-    const chevronUp = document.querySelector(
-      ".chevron[data-icon='bi:caret-up-fill']"
-    );
-    const increaseNumber = () => {
-      var numberValue:number = +number.value;
-      if (numberValue < 0) return;
-      chevronDown.addEventListener("click", (e) => {
-        // @ts-ignore
-        number.value = numberValue--;
-      });
-      chevronUp.addEventListener("click", (e) => {
-        // TODO
-        // @ts-ignore
-        number.value = numberValue++;
-      });
-    };
-    number.addEventListener("change", (e) => {
-      increaseNumber();
+  const number: HTMLInputElement | null =
+    document.querySelector(".donattion-number");
+  const chevronDown = document.querySelector(
+    ".chevron[data-icon='bi:caret-down-fill']"
+  );
+  const chevronUp = document.querySelector(
+    ".chevron[data-icon='bi:caret-up-fill']"
+  );
+  const increaseNumber = () => {
+    var numberValue: number = +number.value;
+    if (numberValue < 0) return;
+    chevronDown.addEventListener("click", (e) => {
+      // @ts-ignore
+      number.value = numberValue--;
     });
+    chevronUp.addEventListener("click", (e) => {
+      // TODO
+      // @ts-ignore
+      number.value = numberValue++;
+    });
+  };
+  number.addEventListener("change", (e) => {
     increaseNumber();
-  </script>
-  <style>
-.bg-cover{
-      position: absolute;
-      top: 0;
-      right: 0;
-    }
-    
-    .flex-between{
-      justify-content: space-between;
-    }
-   .playfair-60{
-    font-family: "Playfair ", serif; 
-   } 
-   .hero-section{
+  });
+  increaseNumber();
+</script>
+<style>
+  .bg-cover {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .flex-between {
     justify-content: space-between;
-   }
-.card {
-      width: 60rem;
-      padding: 6.5rem;
-      height: fit-content;
-    }
-    .donattion-number {
-      min-width: 10rem;
-      max-width: 20rem;
-      min-height: 12rem;
-      padding: 1rem;
-      color: white;
-      border: none;
-      background-color: var(--blue);
-    }
+  }
+  .playfair-60 {
+    font-family: "Playfair ", serif;
+  }
+  .hero-section {
+    justify-content: space-between;
+  }
+  .card {
+    width: 60rem;
+    padding: 6.5rem;
+    height: fit-content;
+  }
+  .donattion-number {
+    min-width: 10rem;
+    max-width: 20rem;
+    min-height: 12rem;
+    padding: 1rem;
+    color: white;
+    border: none;
+    background-color: var(--blue);
+  }
 
-    input[type="number"]::-webkit-inner-spin-button {
-      -webkit-appearance: none;
-    }
-    input[type="number"] {
-      -moz-appearance: textfield;
-      appearance: textfield;
-      margin: 0;
-    }
-   
-    .checklist {
-      margin-top: 2.8rem;
-      border: 1px solid white;
-    }
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+  input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+    margin: 0;
+  }
 
-    .radio-container * {
-      transition: all .3s ease;
-    }
-    .checklist-vertical .checkmark {
-      animation: goDown 0.3s;
-    }
+  .checklist {
+    margin-top: 2.8rem;
+    border: 1px solid white;
+  }
 
-    /*TODO:make the animation go down when it is the first radio checked */
-    .checklist-vertical .radio-container:first-child .checkmark {
-      animation: goUp 0.3s;
-    }
-    .radio-container {
-      align-items: center;
-      position: relative;
-    }
+  .radio-container * {
+    transition: all 0.3s ease;
+  }
+  .checklist-vertical .checkmark {
+    animation: godown 0.3s;
+  }
 
-    .radio-custom {
-      position: absolute;
-      top: 44px;
-      left: 30px;
-      width: 3.2rem;
-      height: 3.2rem;
-      border-radius: 50%;
-      background-color: white;
-      z-index: 100;
-      outline: 1px solid var(--blue);
+  /*TODO:make the animation go down when it is the first radio checked */
+  .checklist-vertical .radio-container:first-child .checkmark {
+    animation: goUp 0.3s;
+  }
+  .radio-container {
+    align-items: center;
+    position: relative;
+  }
+
+  .radio-custom {
+    position: absolute;
+    top: 44px;
+    left: 30px;
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 50%;
+    background-color: white;
+    z-index: 100;
+    outline: 1px solid var(--blue);
+  }
+  .radio {
+    display: none;
+  }
+
+  .radio:checked ~ .checkmark {
+    display: block;
+  }
+  .checkmark {
+    position: absolute;
+    top: 51.9px;
+    left: 38px;
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 50%;
+    background-color: var(--blue);
+    z-index: 120;
+    display: none;
+  }
+
+  .radio-container .playfair-60 {
+    color: var(--blue);
+    padding: 2.4rem;
+    padding-left: 8.2rem;
+    background-color: white;
+    margin-right: -0.1rem;
+  }
+  .radio-container .inria-16 {
+    color: var(--blue);
+    padding: 2.4rem;
+    padding-left: 1rem;
+    background-color: white;
+  }
+  .radio:checked ~ .playfair-60,
+  .radio:checked ~ .inria-16 {
+    color: white;
+    background-color: var(--blue);
+  }
+  .sm-note {
+    color: var(--green);
+    margin-top: 2.8rem;
+    display: inline-block;
+  }
+
+  .checklist-horizontal {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    margin-top: 2.2rem;
+  }
+
+  .checklist-horizontal label:last-child {
+    padding: 0rem;
+  }
+
+  .checklist-horizontal label {
+    position: relative;
+    height: 8rem;
+    display: flex;
+  }
+  .checklist-horizontal .playfair-22 {
+    padding: 2.8rem;
+    padding-right: 5.3rem;
+    padding-left: 8.9rem;
+    display: block;
+    background-color: white;
+    color: var(--blue);
+  }
+  .radio:checked ~ .playfair-22 {
+    color: white;
+    background-color: var(--blue) !important;
+  }
+
+  .checklist-horizontal .radio-custom {
+    top: 25px;
+    left: 30px;
+  }
+
+  .checklist-horizontal .checkmark {
+    top: 33px;
+    left: 38px;
+  }
+
+  .checklist-horizontal .radio-container:first-child .checkmark {
+    animation: goLeft 0.3s;
+  }
+  .checklist-horizontal .radio-container:last-child .checkmark {
+    animation: goRight 0.3s;
+  }
+  .one-time,
+  .monthly {
+    position: relative;
+  }
+  .one-time {
+    display: none;
+    opacity: 1;
+    margin-top: 2.8rem;
+    min-height: 10rem;
+  }
+  .chevron {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    width: 4.8rem;
+    height: 4.8rem;
+    cursor: pointer;
+  }
+  .chevron:first-of-type {
+    top: -5px;
+  }
+  .chevron:last-of-type {
+    top: 78px;
+  }
+
+  @keyframes goUp {
+    from {
+      transform: translateY(10px);
     }
-    .radio {
+    to {
+      transform: translateY(0px);
+    }
+  }
+
+  .flex-between.flex--center {
+    margin-top: 5rem;
+  }
+  .flex-between.flex--center .sm-note {
+    margin-top: 1rem;
+    cursor: pointer;
+  }
+
+  .flex-between.flex--center .sm-note:hover {
+    opacity: 0.8;
+  }
+  @keyframes goDown {
+    from {
+      transform: translateY(-10px);
+    }
+    to {
+      transform: translateY(0px);
+    }
+  }
+
+  @keyframes goRight {
+    from {
+      transform: translateX(-10px);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  @keyframes goLeft {
+    from {
+      transform: translateX(10px);
+    }
+    to {
+      transform: translateX(0px);
+    }
+  }
+  .tag-md {
+    display: none;
+  }
+  @media (max-width: 768px) {
+    .tag {
       display: none;
     }
-
-    .radio:checked ~ .checkmark {
+    .tag-md {
       display: block;
-    }
-    .checkmark {
-      position: absolute;
-      top: 51.9px;
-      left: 38px;
-      width: 1.6rem;
-      height: 1.6rem;
-      border-radius: 50%;
-      background-color: var(--blue);
-      z-index: 120;
-      display: none;
-    }
-
-    .radio-container .playfair-60 {
-      color: var(--blue);
-      padding: 2.4rem;
-      padding-left: 8.2rem;
-      background-color: white;
-      margin-right: -.1rem;
-    }
-    .radio-container .inria-16 {
-      color: var(--blue);
-      padding: 2.4rem;
-      padding-left: 1rem;
-      background-color: white;
-    }
-    .radio:checked ~ .playfair-60,
-    .radio:checked ~ .inria-16 {
+      text-align: center;
+      width: 100%;
       color: white;
-      background-color: var(--blue);
     }
-    .sm-note {
-      color: var(--green);
-      margin-top: 2.8rem;
-      display: inline-block;
+    .flex-between.body {
+      flex-direction: column;
+      gap: 3.6rem;
+    }
+    .card {
+      max-width: 100% !important;
+    }
+    .checklist-horizontal .playfair-22 {
+      padding-right: 3rem;
+    }
+    .radio-container .flex-between {
+      flex-direction: column;
     }
 
+    .radio-container .flex-between .playfair-60 {
+      width: 100%;
+      margin-bottom: -0.1rem;
+      padding-right: 8rem;
+      padding-bottom: 0rem;
+    }
+  }
+  @media (max-width: 768px) {
+    .card {
+      padding: 1.6rem;
+    }
     .checklist-horizontal {
-      display: flex;
-      flex-direction: row;
-      position: relative;
-      margin-top: 2.2rem;
+      flex-direction: column;
     }
-
-    .checklist-horizontal label:last-child {
-      padding: 0rem;
-    }
-
-    .checklist-horizontal label {
-      position: relative;
-      height: 8rem;
-      display: flex;
-    }
-    .checklist-horizontal .playfair-22 {
-      padding: 2.8rem;
-      padding-right: 5.3rem;
-      padding-left: 8.9rem;
-      display: block;
-      background-color: white;
-      color: var(--blue);
-
-    }
-    .radio:checked ~ .playfair-22 {
-      color: white;
-      background-color: var(--blue) !important;
-    }
-
-    .checklist-horizontal .radio-custom {
-      top: 25px;
-      left: 30px;
-    }
-
-    .checklist-horizontal .checkmark {
-      top: 33px;
-      left: 38px;
-    }
-
-    .checklist-horizontal .radio-container:first-child .checkmark {
-      animation: goLeft 0.3s;
-    }
-    .checklist-horizontal .radio-container:last-child .checkmark {
-      animation: goRight 0.3s;
-    }
-    .one-time,
-    .monthly {
-      position: relative;
-    }
-    .one-time {
-      display: none;
-      opacity: 1;
-      margin-top: 2.8rem;
-      min-height: 10rem;
-    }
-    .chevron {
-      position: absolute;
-      top: 0;
-      left: 20px;
-      width: 4.8rem;
-      height: 4.8rem;
-      cursor: pointer;
-    }
-    .chevron:first-of-type {
-      top: -5px;
-    }
-    .chevron:last-of-type {
-      top: 78px;
-    }
-
-    @keyframes goUp {
-      from {
-        transform: translateY(10px);
-      }
-      to {
-        transform: translateY(0px);
-      }
-    }
-
-    .flex-between.flex--center {
-
-      margin-top: 5rem;
-    }
-    .flex-between.flex--center .sm-note {
-      margin-top: 1rem;
-      cursor: pointer;
-    }
-
-    .flex-between.flex--center .sm-note:hover {
-      opacity: 0.8;
-    }
-    @keyframes goDown {
-      from {
-        transform: translateY(-10px);
-      }
-      to {
-        transform: translateY(0px);
-      }
-    }
-
-    @keyframes goRight {
-      from {
-        transform: translateX(-10px);
-      }
-      to {
-        transform: translateX(0);
-      }
-    }
-    @keyframes goLeft {
-      from {
-        transform: translateX(10px);
-      }
-      to {
-        transform: translateX(0px);
-      }
-    }
-.tag-md{
-display: none;
-      }
-    @media (max-width: 768px) {
-      .tag{
-        display: none;
-      }
-      .tag-md{
-display: block;
-text-align: center;
-width: 100%;
-color: white;
-      }
-      .flex-between.body{
-        flex-direction: column;
-        gap: 3.6rem;
-      }
-      .card{
-        max-width: 100% !important;
-      }
-    .checklist-horizontal .playfair-22 {
-padding-right: 3rem;
-}
-.radio-container .flex-between {
-  flex-direction: column;
-}
-
-.radio-container .flex-between .playfair-60  {
-  width: 100%;
-margin-bottom: -.1rem;
-padding-right: 8rem;
-  padding-bottom: 0rem;
-    }
-
-
-    }
-    @media (max-width: 768px) {
-.card{
-  padding: 1.6rem;
-}
-.checklist-horizontal{
-  flex-direction: column;
-}
     .checklist-horizontal label {
       min-width: 100%;
-}
     }
-    
-  </style>
-</LayoutSimple>
+  }
+</style>

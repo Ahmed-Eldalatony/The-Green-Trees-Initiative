@@ -1,35 +1,31 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import TakeAction from '../components/Take-Action.astro';
-import TheIssue from '../components/TheIssue.astro';
-import { Image } from 'astro:assets';
-import WtWeDo from '../components/Wt-We-Do.astro';
-import DidYouKnow from '../components/Did-You-Know.astro';
-import Stories from '../components/Stories.astro';
-import EventsAndNews from '../components/Events-And-News.astro';
-import Contact from '../components/header-and-footer/Contact.astro';
+import Layout from "../layouts/Layout.astro";
+import TakeAction from "../components/Take-Action.astro";
+import TheIssue from "../components/TheIssue.astro";
+import WtWeDo from "../components/Wt-We-Do.astro";
+import DidYouKnow from "../components/Did-You-Know.astro";
+import Stories from "../components/Stories.astro";
+import EventsAndNews from "../components/Events-And-News.astro";
+import Contact from "../components/header-and-footer/Contact.astro";
 ---
 
 <Layout title="the green tree intetiative">
-	  <body>
-	  <main>
-	  <TheIssue />
-	  <TakeAction />
-	  <WtWeDo />
-	  <DidYouKnow />
-	  <Stories />
-	  <EventsAndNews />
-              
-    </body>
-  </html>
-	</main>
-	  <Contact />
+<body>
+<main>
+	<TheIssue />
+	<TakeAction />
+	<WtWeDo />
+	<DidYouKnow />
+	<Stories />
+	<EventsAndNews />
+    </main>
+</body>
 </Layout>
+<Contact />
+
 <style>
-
-
-  .wt-we-do .grid-4 {
-    margin-top: 14rem;
-    gap: 4rem;
-  }
+.wt-we-do .grid-4 {
+margin-top: 14rem;
+gap: 4rem;
+}
 </style>
