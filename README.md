@@ -5,7 +5,8 @@ The biggest challenge of this project is the layout changing dramaticall on phon
 but I handled it successfully :).
 
 ## Note
-Working now on reorganizing the project and making css styles more clean.
+Iam working now on reorganizing the project and making css styles more clean, this why 
+you will notice there some unconsitencies among the project.
 
 
 Inside of your Astro project, you'll see the following folders and files:
