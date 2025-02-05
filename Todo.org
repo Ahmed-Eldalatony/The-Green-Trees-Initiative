@@ -1,6 +1,0 @@
-- grid in about wt-we-do take for it in mobile version
-- Use the Image component from Astro
-- Use the card__head class and card__p
-- make use of this of this styling system above
-- Asure to have alt for imgs
-- adding testing?!!
